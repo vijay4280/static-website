@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products Admin</title>
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+<h2>Products Management</h2>
+
+<form id="productForm">
+  <input type="text" name="name" placeholder="Product Name" required>
+  <input type="text" name="category" placeholder="Category (Drip Tubing)">
+  <input type="text" name="page" placeholder="Page (drip-irrigation)">
+  <input type="text" name="url" placeholder="/plain-lateral.html">
+  <button>Add Product</button>
+</form>
+
+<hr>
+
+<table border="1" width="100%" cellpadding="8">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Category</th>
+      <th>Page</th>
+      <th>URL</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody id="productTable"></tbody>
+</table>
+
+<h2>Add Product</h2>
+
+<form id="productUploadForm" enctype="multipart/form-data">
+  <input name="title" placeholder="Title"><br>
+  <input name="category" value="drip-irrigation"><br>
+  <input name="subCategory" placeholder="Sub category"><br>
+  <input type="file" name="image"><br>
+
+  <textarea name="links"
+   placeholder="Plain Lateral|/plain.html"></textarea>
+
+  <button>Add</button>
+</form>
+
+<script>
+document.getElementById('productUploadForm').onsubmit = async e => {
+  e.preventDefault();
+  const fd = new FormData(e.target);
+
+  const links = fd.get('links').split('\n').map(l => {
+    const [name, url] = l.split('|');
+    return { name, url };
+  });
+
+  fd.delete('links');
+  fd.append('links', JSON.stringify(links));
+
+  await fetch('/admin/products', {
+    method: 'POST',
+    body: fd
+  });
+
+  alert('Product added');
+};
+</script>
+<script src="products.js"></script>
+</body>
+</html>

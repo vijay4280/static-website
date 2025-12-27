@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Gardener - Gardening Website Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">  
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
+    </div>
+    <!-- Spinner End -->
+
+    <div id="header-container"></div>
+    
+   <!-- Navbar Start -->
+     <nav class="navbar navbar-expand-lg navbar-light sticky-top p-2" style="background-color: rgb(177, 226, 177);">
+        <div class="container-fluid px-0">
+            <div class="d-flex w-100 align-items-center justify-content-between flex-wrap flex-lg-nowrap">
+                <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5 mb-2 mb-lg-0">
+                    <img src="img/vidhi_logo-removebg-preview.png" class="ps-4 logo-img img-fluid" alt="Vidhi Enterprises Logo">
+                </a>
+                <form class="d-flex mx-auto my-2 my-lg-0 flex-grow-1" role="search" style="max-width: 400px; min-width: 180px; width: 100%;">
+                    <div class="input-group input-group-lg shadow-sm search-bar-rounded position-relative" style="width:100%;">
+                        <input id="searchInput" type="search" class="form-control rounded-pill border-1 ps-4" placeholder="Search" aria-label="Search" style="background: #f8f9fa; font-size: 1.1rem; min-height: 48px;" autocomplete="off">
+                        <button class="btn btn-primary rounded-pill d-flex align-items-center justify-content-center" type="submit" title="Search" style="width:48px; height:48px; margin-left:-48px; z-index:2; ">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        <ul id="searchSuggestions" class="search-suggestions"></ul>
+                    </div>
+                </form>
+                <button type="button" class="navbar-toggler ms-2 me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse w-100" id="navbarCollapse" style="margin-right: 2rem;">
+                <div class="navbar-nav ms-auto p-4 p-lg-0 align-items-lg-center">
+                    <a href="index.html" class="nav-item nav-link active">Home</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Products</a>
+                        <div class="dropdown-menu bg-light m-0">
+                            <a href="/dripirri.html" class="dropdown-item">Drip Irrigation</a>
+                            <a href="/sprinkler.html" class="dropdown-item">Sprinkler Irrigation</a>
+                            <a href="/rainsprinkler.html" class="dropdown-item">Rain Sprinkler</a>
+                            <a href="/landscape.html" class="dropdown-item">Landscape  Irrigation</a>
+                            <a href="/economical.html" class="dropdown-item">Economical Irrigation</a>
+                            <a href="/Vidhi-kit.html" class="dropdown-item">Vidhi Kit</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link  dropdown-toggle" data-bs-toggle="dropdown"><b>About Us</b></a>
+                        <div class="dropdown-menu bg-light m-0">
+                            <a href="company-profile.html" class="dropdown-item"><b>Company Profile</b></a>
+                            <a href="founder-vision.html" class="dropdown-item"><b>Founder's Vision</b></a>
+                            <a href="our-journey.html" class="dropdown-item"><b>Our Journey</b></a>
+                            <a href="legacy-leader.html" class="dropdown-item"><b> Legacy &Leadership</b></a>
+                            <a href="manfacture.html" class="dropdown-item"><b>Manfacturing & Infrastructure</b></a>
+                            <a href="quality-policy.html" class="dropdown-item"><b>Quality Policy</b></a>
+                            <a href="sustainable.html" class="dropdown-item"><b>Sustainabilty Commitment</b></a>
+                            <a href="global-presence.html" class="dropdown-item"><b>Global Presence</b></a>
+                            <a href="knowledge-hub.html" class="dropdown-item"><b>Knowledge Hub</b></a>
+                            <a href="blog.html" class="dropdown-item"><b>Blog</b></a>
+                            <a href="careers.html" class="dropdown-item"><b>Careers</b></a>
+
+                        </div>
+                    </div>
+                    
+                    <a href="contact.html" class="nav-item nav-link">Contact Us</a>
+                    <a href="index.html" class="navbar-brand d-flex align-items-center ps-4 mt-3 mt-lg-0">
+                        <img src="img/logo-olored.png" class="logo-img img-fluid" alt="Vidhi Enterprises Logo Right" style="margin-left: 0.5rem; margin-bottom: 11px;">
+                    </a>
+                </div>
+            </div>
+        </div>
+      
+    </nav>
+    <!-- Navbar End -->
+
+
+
+
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header py-5 mb-5 wow fadeIn mt-2" data-wow-delay="0.1s" style="background-image: url('./img/12.png'); background-size: cover; background-position: center;">
+        <div class="container text-center py-5">
+            <h1 class="display-3 text-white mb-4 animated slideInDown">About Us</h1>
+            <nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb justify-content-center mb-0">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">About</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+
+    <!-- About Start -->
+    <div class="container-xxl py-5" style="background-color: whitesmoke;">
+        <div class="container">
+            <div class="row g-5 align-items-end">
+                <div class="col-lg-3 col-md-5 wow fadeInUp" data-wow-delay="0.1s">
+                    <img class="img-fluid rounded" data-wow-delay="0.1s" src="img/Thank you vidhi.png" alt="About Us">
+                </div>
+                <div class="col-lg-6 col-md-7 wow fadeInUp" data-wow-delay="0.3s">
+                    <h1 class="display text-primary " style="font-size:7rem; ">40+</h1>
+                    <p class=" display mb-4 text-primary" style="font-weight: 900;font-size:1.5rem; ">Years of making Every Drop Count</p>
+                    <h5 class="display-5 mb-6" style="color: rgba(1, 1, 90, 0.668);">'We Make Every Drop Work Smarter'</h5>
+                    <p class="mb-6 text-primary" style="font-weight: 600;">"Helping you water better, grow stronger & make the most of every single drop"</p>
+                    <h1 class="display-7 mb-6" style="color: rgba(1, 1, 90, 0.668);">"Smart Irrigation Starts here --- because every drop matter"</h1>
+                    <a class="btn btn-primary py-3 px-4" style="margin-top: 15px;" href="/products.html">Explore More</a>
+                </div>
+                <div class="col-lg-3 col-md-12 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="row g-5">
+                        <div class="col-12 col-sm-6 col-lg-12">
+                            <div class="border-start ps-4">
+                                <i class="fa fa-award fa-3x text-primary mb-3"></i>
+                                <h4 class="mb-3 text-primary">Trusted Quality</h4>
+                                <span style="color: rgba(1, 1, 90, 0.668);">We are known for durability , innovation & customer </span>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-12">
+                            <div class="border-start ps-4">
+                                <i class="fa fa-users fa-3x text-primary mb-3"></i>
+                                <h4 class="mb-3 text-primary">Dedicated Team</h4>
+                                <span style="color: rgba(1, 1, 90, 0.668);">From choosing the right component to after sales support, Our experts are always here to help you at every step of the way
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+
+    <!-- Facts Start -->
+    <div class="container-fluid facts my-5 py-5" data-parallax="scroll" data-image-src="design-4.png" >
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-sm-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.1s">
+                    <h1 class="display-5 text-white" >Happy Clients</h1>
+                    <span class="fs-5 fw-semi-bold text-light">Trusted WorldWide</span>
+                </div>
+                <div class="col-sm-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.3s">
+                    <h1 class="display-8 text-white" >Projects Completed</h1>
+                    <span class="fs-5 fw-semi-bold text-light">Sustainable & Tailored Irrigation Solution </span>
+                </div>
+                <div class="col-sm-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.5s">
+                   <h1 class="display-8 text-white" >Dedicated Experts</h1>
+                    <span class="fs-5 fw-semi-bold text-light">Skilled and Realiable Team</span>
+                </div>
+                <div class="col-sm-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.7s">
+                   <h1 class="display-8 text-white" >Award & Recognition</h1>
+                    <span class="fs-5 fw-semi-bold text-light">Excellence in Innovations</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Facts End -->
+
+
+
+    <!-- Team Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+                <p class="fs-5 fw-bold text-primary">Our Team</p>
+                <h1 class="display-5 mb-5">Dedicated & Experienced Team Members</h1>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="team-item rounded">
+                        <img class="img-fluid" src="img/team-1.jpg" alt="">
+                        <div class="team-text">
+                            <h4 class="mb-0">Doris Jordan</h4>
+                            <p class="text-primary">Landscape Designer</p>
+                            <div class="team-social d-flex">
+                                <a class="btn btn-square rounded-circle me-2" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square rounded-circle me-2" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square rounded-circle me-2" href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="team-item rounded">
+                        <img class="img-fluid" src="img/team-2.jpg" alt="">
+                        <div class="team-text">
+                            <h4 class="mb-0">Johnny Ramirez</h4>
+                            <p class="text-primary">Garden Designer</p>
+                            <div class="team-social d-flex">
+                                <a class="btn btn-square rounded-circle me-2" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square rounded-circle me-2" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square rounded-circle me-2" href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="team-item rounded">
+                        <img class="img-fluid" src="img/team-3.jpg" alt="">
+                        <div class="team-text">
+                            <h4 class="mb-0">Diana Wagner</h4>
+                            <p class="text-primary">Senior Gardener</p>
+                            <div class="team-social d-flex">
+                                <a class="btn btn-square rounded-circle me-2" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square rounded-circle me-2" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square rounded-circle me-2" href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Team End -->
+
+    <div id="footer-container"></div>
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/parallax/parallax.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+    <script src="/js/chatbot-advanced.js"></script>
+
+
+</html>

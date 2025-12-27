@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>VIDHI ENTERPRISES - Company Profile</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">  
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+
+ <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f7fa;
+            color: #2c3e50;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        header {
+            background: linear-gradient(135deg, #0f4c75 0%, #2c7da0 50%, #4a90e2 100%);
+            color: white;
+            text-align: center;
+            padding: 120px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            animation: shimmer 4s infinite;
+        }
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+        header h1 {
+            font-size: 4.2em;
+            font-weight: 700;
+            margin: 0 0 15px 0;
+            letter-spacing: -0.02em;
+            animation: fadeInUp 1.5s ease-out, glow 2s ease-in-out infinite alternate;
+            position: relative;
+        }
+        @keyframes glow {
+            from { text-shadow: 0 0 10px rgba(255,255,255,0.5); }
+            to { text-shadow: 0 0 20px rgba(255,255,255,0.8), 0 0 30px rgba(74, 144, 226, 0.5); }
+        }
+        .header-subtitle {
+            font-size: 1.5em;
+            font-weight: 300;
+            margin: 0;
+            opacity: 0.95;
+            animation: fadeInUp 1.5s ease-out 0.5s both;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .timeline {
+            position: relative;
+            padding: 100px 0;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 2px;
+            height: 0;
+            background: linear-gradient(to bottom, #0f4c75, #4a90e2);
+            transform: translateX(-50%);
+            animation: lineDraw 3s ease-out forwards;
+        }
+        @keyframes lineDraw {
+            to { height: 100%; }
+        }
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 80px;
+            opacity: 0;
+            transform: translateY(60px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+            position: relative;
+        }
+        .timeline-item.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        .timeline-content {
+            flex: 1;
+            padding: 30px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #e3f2fd;
+        }
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(74, 144, 226, 0.1), transparent);
+            transition: left 0.8s ease;
+        }
+        .timeline-content:hover::before {
+            left: 100%;
+        }
+        .timeline-content:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 50px rgba(0, 123, 255, 0.2);
+        }
+        .timeline-year {
+            font-size: 2.5em;
+            font-weight: 700;
+            color: #0f4c75;
+            margin-bottom: 15px;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        .timeline-content h3 {
+            font-size: 1.6em;
+            color: #2c7da0;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        .timeline-content ul {
+            list-style: none;
+            padding: 0;
+        }
+        .timeline-content li {
+            padding: 8px 0;
+            position: relative;
+            padding-left: 25px;
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: all 0.6s ease-out;
+        }
+        .timeline-content.animate li {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .timeline-content li:nth-child(1) { transition-delay: 0.1s; }
+        .timeline-content li:nth-child(2) { transition-delay: 0.2s; }
+        .timeline-content li:nth-child(3) { transition-delay: 0.3s; }
+        .timeline-content li:nth-child(4) { transition-delay: 0.4s; }
+        .timeline-content li:nth-child(5) { transition-delay: 0.5s; }
+        .timeline-content li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #4a90e2;
+            font-weight: bold;
+            animation: iconSpin 1s ease-out;
+        }
+        @keyframes iconSpin {
+            from { transform: rotate(-180deg); }
+            to { transform: rotate(0deg); }
+        }
+        .timeline-dot {
+            width: 1px;
+            height: 1px;
+            background: linear-gradient(135deg, #0f4c75, #4a90e2);
+            border-radius: 50%;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            animation: dotPulse 2s infinite;
+            border: 3px solid white;
+            box-shadow: 0 0 0 0 rgba(74, 144, 226, 1);
+            transition: box-shadow 0.3s ease;
+        }
+        .timeline-item:nth-child(even) .timeline-dot {
+            left: auto;
+            right: 50%;
+            transform: translateX(50%);
+        }
+        @keyframes dotPulse {
+            0% { box-shadow: 0 0 0 0 rgba(74, 144, 226, 0.7); }
+            70% { box-shadow: 0 0 0 20px rgba(74, 144, 226, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(74, 144, 226, 0); }
+        }
+        .timeline-dot:hover {
+            box-shadow: 0 0 0 0 rgba(74, 144, 226, 1);
+            animation: none;
+            transform: translateX(-50%) scale(1.2);
+        }
+        .today-section, .future-section {
+            background: linear-gradient(135deg, #e3f2fd 0%, #f5f7fa 100%);
+            padding: 100px 0;
+            text-align: center;
+        }
+        .today-section h2, .future-section h2 {
+            font-size: 3em;
+            color: #0f4c75;
+            margin-bottom: 40px;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1s ease-out;
+        }
+        .today-section h2.animate, .future-section h2.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .today-grid, .future-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        .legacy-card, .future-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            opacity: 0;
+            transform: scale(0.8) rotateY(20deg);
+            animation: cardFlipIn 1s ease-out forwards;
+            cursor: pointer;
+            border-top: 4px solid #4a90e2;
+        }
+        .legacy-card:nth-child(1), .future-card:nth-child(1) { animation-delay: 0.2s; }
+        .legacy-card:nth-child(2), .future-card:nth-child(2) { animation-delay: 0.4s; }
+        .legacy-card:nth-child(3), .future-card:nth-child(3) { animation-delay: 0.6s; }
+        .legacy-card:nth-child(4), .future-card:nth-child(4) { animation-delay: 0.8s; }
+        @keyframes cardFlipIn {
+            to {
+                opacity: 1;
+                transform: scale(1) rotateY(0deg);
+            }
+        }
+        .legacy-card:hover, .future-card:hover {
+            transform: scale(1.05) rotateY(-5deg);
+            box-shadow: 0 15px 40px rgba(0, 123, 255, 0.15);
+        }
+        .legacy-card i, .future-card i {
+            font-size: 2.5em;
+            color: #4a90e2;
+            margin-bottom: 15px;
+            transition: all 0.5s ease;
+        }
+        .legacy-card:hover i, .future-card:hover i {
+            transform: rotate(360deg) scale(1.1);
+            color: #0f4c75;
+        }
+        .legacy-card h3, .future-card h3 {
+            font-size: 1.2em;
+            color: #0f4c75;
+            margin-bottom: 10px;
+        }
+        @media (max-width: 768px) {
+            header h1 { font-size: 3em; }
+            .timeline-item { flex-direction: column !important; text-align: center; margin-bottom: 60px; }
+            .timeline-dot { position: static; margin: 20px auto; transform: none; }
+            .timeline::before { left: 20px; }
+            .timeline-item:nth-child(even) .timeline-dot { right: auto; }
+            h2 { font-size: 2.5em; }
+            .today-grid, .future-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+    <script>
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.timeline-item, .today-section h2, .future-section h2, .legacy-card, .future-card').forEach(el => {
+                observer.observe(el);
+            });
+            document.querySelectorAll('.timeline-content').forEach(content => {
+                observer.observe(content);
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
+    </div>
+    <!-- Spinner End -->
+
+    <div id="header-container"></div>
+    
+   <!-- Navbar Start -->
+     <nav class="navbar navbar-expand-lg navbar-light sticky-top p-2" style="background-color: rgb(177, 226, 177);">
+        <div class="container-fluid px-0">
+            <div class="d-flex w-100 align-items-center justify-content-between flex-wrap flex-lg-nowrap">
+                <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5 mb-2 mb-lg-0">
+                    <img src="img/vidhi_logo-removebg-preview.png" class="ps-4 logo-img img-fluid" alt="Vidhi Enterprises Logo">
+                </a>
+                <form class="d-flex mx-auto my-2 my-lg-0 flex-grow-1" role="search" style="max-width: 400px; min-width: 180px; width: 100%;">
+                    <div class="input-group input-group-lg shadow-sm search-bar-rounded position-relative" style="width:100%;">
+                        <input id="searchInput" type="search" class="form-control rounded-pill border-1 ps-4" placeholder="Search" aria-label="Search" style="background: #f8f9fa; font-size: 1.1rem; min-height: 48px;" autocomplete="off">
+                        <button class="btn btn-primary rounded-pill d-flex align-items-center justify-content-center" type="submit" title="Search" style="width:48px; height:48px; margin-left:-48px; z-index:2; ">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        <ul id="searchSuggestions" class="search-suggestions"></ul>
+                    </div>
+                </form>
+                <button type="button" class="navbar-toggler ms-2 me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse w-100" id="navbarCollapse" style="margin-right: 2rem;">
+                <div class="navbar-nav ms-auto p-4 p-lg-0 align-items-lg-center">
+                    <a href="index.html" class="nav-item nav-link active "><b>Home</b></a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link  dropdown-toggle" data-bs-toggle="dropdown"><b>Products</b></a>
+                        <div class="dropdown-menu m-0 bg-light">
+                            <a href="/dripirri.html" class="dropdown-item"><b>Drip Irrigation</b></a>
+                            <a href="/sprinkler.html" class="dropdown-item"><b>Sprinkler Irrigation</b></a>
+                            <a href="/rainsprinkler.html" class="dropdown-item"><b>Rain Sprinkler</b></a>
+                            <a href="/landscape.html" class="dropdown-item"><b>Landscape Irrigation</b></a>
+                            <a href="/economical.html" class="dropdown-item"><b>Economical Irrigation</b></a>
+                            <a href="/Vidhi-kit.html" class="dropdown-item"><b>Vidhi Kit</b></a>
+                        </div>
+                    </div>
+                     <div class="nav-item dropdown">
+                        <a href="#" class="nav-link  dropdown-toggle" data-bs-toggle="dropdown"><b>About Us</b></a>
+                        <div class="dropdown-menu bg-light m-0">
+                            <a href="company-profile.html" class="dropdown-item"><b>Company Profile</b></a>
+                            <a href="founder-vision.html" class="dropdown-item"><b>Founder's Vision</b></a>
+                            <a href="our-journey.html" class="dropdown-item"><b>Our Journey</b></a>
+                            <a href="legacy-leader.html" class="dropdown-item"><b> Legacy &Leadership</b></a>
+                            <a href="manfacture.html" class="dropdown-item"><b>Manfacturing & Infrastructure</b></a>
+                            <a href="quality-policy.html" class="dropdown-item"><b>Quality Policy</b></a>
+                            <a href="sustainable.html" class="dropdown-item"><b>Sustainabilty Commitment</b></a>
+                            <a href="global-presence.html" class="dropdown-item"><b>Global Presence</b></a>
+                            <a href="knowledge-hub.html" class="dropdown-item"><b>Knowledge Hub</b></a>
+                            <a href="blog.html" class="dropdown-item"><b>Blog</b></a>
+                            <a href="careers.html" class="dropdown-item"><b>Careers</b></a>
+
+                        </div>
+                    </div>
+
+
+                    <a href="contact.html" class="nav-item  nav-link"><b>Contact Us</b></a>
+                    <a href="index.html" class="navbar-brand d-flex align-items-center ps-4 mt-3 mt-lg-0">
+                        <img src="img/logo-olored.png" class="logo-img img-fluid" alt="Vidhi Enterprises Logo Right" style="margin-left: 0.5rem; margin-bottom: 11px;">
+                    </a>
+                </div>
+            </div>
+        </div>
+      
+    </nav>
+    <!-- Navbar End -->
+
+ <header class="mt-2">
+        <div class="container">
+            <h1>Our Journey</h1>
+            <p class="header-subtitle">From a One-Room Beginning to a Global Irrigation Components Manufacturer</p>
+        </div>
+    </header>
+
+    <div class="timeline">
+        <div class="container">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-year">📌 Early 1980s</div>
+                    <h3>The Beginning of a Vision</h3>
+                    <ul>
+                        <li>Vidhi Enterprises was founded by Late Shri Dhirendar Kumar Jain (Bauji) — an engineer, architect, and perfectionist.</li>
+                        <li>He began his journey from his home with just one helper and a vision to bring precision to irrigation components.</li>
+                        <li>In the early 80s, he started manufacturing connectors, supplying them on an OEM and white-label basis — long before OEM became a common practice.</li>
+                        <li>His engineering discipline and eye for detail made his components trusted by dealers and manufacturers.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">📌 1983</div>
+                    <h3>Moving into Emitters</h3>
+                    <ul>
+                        <li>With rising demand and his interest in micro-irrigation engineering, he expanded into emitters around 1983.</li>
+                        <li>His strength was precision flow rates, discharge accuracy, and consistent discharge diameter — the most critical parameters for high-performing emitters and sprinklers.</li>
+                        <li>This reputation for exceptional flow control set the foundation for Vidhi Enterprises.</li>
+                    </ul>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-year">📌 1983–1988</div>
+                    <h3>Growing Home-Based Manufacturing</h3>
+                    <ul>
+                        <li>Started with 1 semi-automatic hand moulding machine.</li>
+                        <li>Within five years, expanded to 3 semi-automatic hand moulding machines.</li>
+                        <li>Production increased rapidly due to OEM demand, and his accuracy-driven approach earned industry-wide respect.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">📌 1990s</div>
+                    <h3>The First Major Expansion</h3>
+                    <ul>
+                        <li>With increasing bulk orders and the need for higher precision: Shifted to fully automatic injection moulding machines.</li>
+                        <li>Added the company’s first pipe extruder.</li>
+                        <li>Established an in-house tool room — extremely rare for small manufacturers at that time.</li>
+                        <li>Focused strongly on OEM supply, building relationships with irrigation brands across India.</li>
+                    </ul>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-year">📌 1995</div>
+                    <h3>Reaching Full Capacity</h3>
+                    <ul>
+                        <li>By 1995, Vidhi Enterprises had: 2 extrusion lines, 6 automatic injection moulding machines, 3 semi-automatic moulding machines, A complete, well-equipped tool room, A workforce operating at full production capacity.</li>
+                        <li>This year was also pivotal because:</li>
+                        <li>👨‍🔧 Mr. Vineet Jain (Founder’s Son) Joins the Business</li>
+                        <li>He brought a dynamic, growth-focused approach and began exploring international markets such as UAE, Saudi Arabia, and the Middle East.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">📌 Early 2000s</div>
+                    <h3>Introducing Plastic Sprinklers</h3>
+                    <ul>
+                        <li>Entered the 1/2” and 3/4” plastic sprinkler segment.</li>
+                        <li>Enhanced design and flow accuracy to match international brands.</li>
+                        <li>Continued to strengthen their OEM manufacturing reputation.</li>
+                    </ul>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-year">📌 2007</div>
+                    <h3>Entry into Brass Sprinklers</h3>
+                    <ul>
+                        <li>Due to demand from Saudi Arabia, UAE, and Middle Eastern markets, the company began manufacturing brass sprinklers.</li>
+                        <li>Adopted a hybrid model: Casting on job-work, Machining and assembly in-house.</li>
+                        <li>This move positioned Vidhi Enterprises as a versatile supplier offering both plastic and brass models.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">📌 2007</div>
+                    <h3>Gravity Die Casting Introduced</h3>
+                    <ul>
+                        <li>Started gravity die casting to improve quality, control, and production consistency of brass components.</li>
+                        <li>Enabled development of stronger, more durable sprinkler bodies and nozzles.</li>
+                    </ul>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-year">📌 2010</div>
+                    <h3>Launch of High-Capacity Sprinklers</h3>
+                    <ul>
+                        <li>Introduced the 1-1/4” rain sprinkler with an impressive 48-meter diameter coverage.</li>
+                        <li>Expanded into larger formats, developing: 1-1/4” rain silver sprinklers, 1-1/2” rain gold sprinklers, 2” rain violet sprinklers.</li>
+                        <li>These innovations strengthened the brand’s technical leadership.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-year">📌 2018</div>
+                    <h3>Third Generation Joins: Mr. Vibhor Jain</h3>
+                    <ul>
+                        <li>Mr. Vibhor Jain, the founder’s grandson, joined the company in 2018.</li>
+                        <li>He first underwent hands-on production training — learning precision, moulding, flow testing, and the technical core of the business.</li>
+                        <li>After mastering operations, he expanded into international markets, focusing especially on Africa.</li>
+                        <li>Under his efforts, Vidhi Enterprises entered Kenya, achieving strong market success by 2024.</li>
+                    </ul>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+        </div>
+    </div>
+
+    <section class="today-section">
+        <div class="container">
+            <h2>⭐ Today — A Legacy Continuing Forward</h2>
+            <p style="font-size: 1.2em; margin-bottom: 50px; color: #4a5568;">From one helper and a hand moulding machine to a multi-generational global enterprise — the journey has been built on:</p>
+            <div class="today-grid">
+                <div class="legacy-card">
+                    <i class="fas fa-cogs"></i>
+                    <h3>Precision Engineering</h3>
+                </div>
+                <div class="legacy-card">
+                    <i class="fas fa-handshake"></i>
+                    <h3>OEM Expertise</h3>
+                </div>
+                <div class="legacy-card">
+                    <i class="fas fa-star"></i>
+                    <h3>Technical Excellence</h3>
+                </div>
+                <div class="legacy-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Sustainable Growth</h3>
+                </div>
+                <div class="legacy-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Strong Family Leadership</h3>
+                </div>
+                <div class="legacy-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Trust Built Over Decades</h3>
+                </div>
+            </div>
+            <p style="font-size: 1.1em; margin-top: 40px; color: #4a5568;">Vidhi Enterprises today stands as a trusted global partner in drip, sprinkler, and micro-irrigation components, exporting to the Middle East, Africa, and Asia.</p>
+        </div>
+    </section>
+
+    <section class="future-section">
+        <div class="container">
+            <h2>🌿 The Road Ahead</h2>
+            <p style="font-size: 1.2em; margin-bottom: 50px; color: #4a5568;">With continuous innovation, upgraded manufacturing, and a commitment to water efficiency, Vidhi Enterprises aims to:</p>
+            <div class="future-grid">
+                <div class="future-card">
+                    <i class="fas fa-globe"></i>
+                    <h3>Expand its global presence</h3>
+                </div>
+                <div class="future-card">
+                    <i class="fas fa-rocket"></i>
+                    <h3>Introduce advanced irrigation technologies</h3>
+                </div>
+                <div class="future-card">
+                    <i class="fas fa-link"></i>
+                    <h3>Strengthen OEM and private-label partnerships</h3>
+                </div>
+                <div class="future-card">
+                    <i class="fas fa-heart"></i>
+                    <h3>Uphold the legacy of Late Shri D.K. Jain through quality, honesty, and precision</h3>
+                </div>
+            </div>
+            <p style="font-size: 1.1em; margin-top: 40px; color: #4a5568; font-style: italic;">Our journey is still unfolding — rooted in family values, built on engineering excellence, and committed to a water-efficient future.</p>
+        </div>
+    </section>
+
+    <div id="footer-container"></div>
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/parallax/parallax.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+    <script src="/js/chatbot-advanced.js"></script>
+
+
+</html>

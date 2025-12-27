@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Vidhi Enterprises</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="irrigation Somalia, drip Somalia, micro irrigation Somalia" name="keywords">
+    <meta content="Vidhi Enterprises exports drip kits, micro sprinklers and HDPE pipes for Somalia’s farms and community irrigation programs." name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">  
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <!-- Only AOS for animations – completely safe for your navbar/footer -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        :root {
+            --green: #1a5f3d;
+            --green-dark: #0e3d27;
+            --green-light: #4a9c6d;
+            --gold: #9c7a3a;
+            --light: #f8fdfa;
+        }
+        body {margin:0; font-family:'Segoe UI',Tahoma,sans-serif; background:#fff; color:#333; line-height:1.7;}
+        h1,h2,h3 {font-family:Georgia,serif; color:var(--green-dark);}
+        h1 {font-family:Georgia,serif; color:whitesmoke;}
+
+        /* Hero */
+        .hero {
+            height:45vh; min-height:450px;
+            background:linear-gradient(rgba(0,0,0,0.62),rgba(0,0,0,0.72)),
+                       url('https://images.unsplash.com/photo-1625246333195-78d9c38ad449?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat;
+            display:flex; align-items:center; justify-content:center; text-align:center; color:white;
+        }
+        .hero h1 {font-size:4.5rem; margin:0; text-shadow:0 4px 20px rgba(0,0,0,0.7);}
+        .hero p {font-size:1.45rem; max-width:820px; margin:20px auto 0;}
+
+        .section {padding:110px 20px;}
+        .container {max-width:1200px; margin:0 auto; padding:0 20px;}
+
+        .section-title {
+            text-align:center; font-size:3.2rem; margin-bottom:70px; position:relative;
+        }
+        .section-title::after {
+            content:''; width:120px; height:5px; background:var(--gold);
+            display:block; margin:25px auto; border-radius:3px;
+        }
+
+        /* FAQ Accordion – beautiful & smooth */
+        .faq {
+            background:var(--light); border-radius:18px; overflow:hidden;
+            box-shadow:0 12px 40px rgba(0,0,0,0.08); margin-bottom:25px;
+            transition:0.4s;
+        }
+        .faq:hover {transform:translateY(-8px); box-shadow:0 20px 50px rgba(26,95,61,0.16);}
+        .faq-question {
+            background:var(--green); color:white; padding:28px 35px;
+            font-size:1.38rem; font-weight:600; cursor:pointer;
+            display:flex; justify-content:space-between; align-items:center;
+        }
+        .faq-question:hover {background:var(--green-dark);}
+        .faq-question i {transition:0.3s;}
+        .faq-answer {
+            padding:0 35px; max-height:0; overflow:hidden;
+            background:#fdfefe; transition:max-height 0.5s ease;
+        }
+        .faq-answer.show {padding:35px; max-height:800px;}
+
+        .faq-answer ul {
+            list-style:none; padding-left:0; margin:18px 0;
+        }
+        .faq-answer ul li {
+            padding-left:32px; position:relative; margin:14px 0;
+        }
+        .faq-answer ul li::before {
+            content:" "; color:var(--green-light); font-weight:bold;
+            position:absolute; left:0;
+        }
+    </style>
+</head>
+
+<body>
+ 
+
+  <div id="header-container"></div>
+  
+  <!-- Navbar Start -->
+     <nav class="navbar navbar-expand-lg navbar-light sticky-top p-2" style="background-color: rgb(177, 226, 177);">
+        <div class="container-fluid px-0">
+            <div class="d-flex w-100 align-items-center justify-content-between flex-wrap flex-lg-nowrap">
+                <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5 mb-2 mb-lg-0">
+                    <img src="img/vidhi_logo-removebg-preview.png" class="ps-4 logo-img img-fluid" alt="Vidhi Enterprises Logo">
+                </a>
+                <form class="d-flex mx-auto my-2 my-lg-0 flex-grow-1" role="search" style="max-width: 400px; min-width: 180px; width: 100%;">
+                    <div class="input-group input-group-lg shadow-sm search-bar-rounded position-relative" style="width:100%;">
+                        <input id="searchInput" type="search" class="form-control rounded-pill border-1 ps-4" placeholder="Search" aria-label="Search" style="background: #f8f9fa; font-size: 1.1rem; min-height: 48px;" autocomplete="off">
+                        <button class="btn btn-primary rounded-pill d-flex align-items-center justify-content-center" type="submit" title="Search" style="width:48px; height:48px; margin-left:-48px; z-index:2; ">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        <ul id="searchSuggestions" class="search-suggestions"></ul>
+                    </div>
+                </form>
+                <button type="button" class="navbar-toggler ms-2 me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse w-100" id="navbarCollapse" style="margin-right: 2rem;">
+                <div class="navbar-nav ms-auto p-4 p-lg-0 align-items-lg-center">
+                   <a href="index.html" class="nav-item nav-link active "><b>Home</b></a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link  dropdown-toggle" data-bs-toggle="dropdown"><b>Products</b></a>
+                        <div class="dropdown-menu m-0 bg-light">
+                            <a href="/dripirri.html" class="dropdown-item"><b>Drip Irrigation</b></a>
+                            <a href="/sprinkler.html" class="dropdown-item"><b>Sprinkler Irrigation</b></a>
+                            <a href="/rainsprinkler.html" class="dropdown-item"><b>Rain Sprinkler</b></a>
+                            <a href="/landscape.html" class="dropdown-item"><b>Landscape Irrigation</b></a>
+                            <a href="/economical.html" class="dropdown-item"><b>Economical Irrigation</b></a>
+                       <a href="/vidhi-kit.html" class="dropdown-item"><b>Vidhi Kit</b></a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link  dropdown-toggle" data-bs-toggle="dropdown"><b>About Us</b></a>
+                        <div class="dropdown-menu bg-light m-0">
+                            <a href="company-profile.html" class="dropdown-item"><b>Company Profile</b></a>
+                            <a href="founder-vision.html" class="dropdown-item"><b>Founder's Vision</b></a>
+                            <a href="our-journey.html" class="dropdown-item"><b>Our Journey</b></a>
+                            <a href="legacy-leader.html" class="dropdown-item"><b> Legacy &Leadership</b></a>
+                            <a href="manfacture.html" class="dropdown-item"><b>Manfacturing & Infrastructure</b></a>
+                            <a href="quality-policy.html" class="dropdown-item"><b>Quality Policy</b></a>
+                            <a href="sustainable.html" class="dropdown-item"><b>Sustainabilty Commitment</b></a>
+                            <a href="global-presence.html" class="dropdown-item"><b>Global Presence</b></a>
+                            <a href="knowledge-hub.html" class="dropdown-item"><b>Knowledge Hub</b></a>
+                            <a href="blog.html" class="dropdown-item"><b>Blog</b></a>
+                            <a href="careers.html" class="dropdown-item"><b>Careers</b></a>
+
+                        </div>
+                    </div>
+                    <a href="contact.html" class="nav-item  nav-link"><b>Contact Us</b></a>
+                    <a href="index.html" class="navbar-brand d-flex align-items-center ps-4 mt-3 mt-lg-0">
+                        <img src="img/logo-olored.png" class="logo-img img-fluid" alt="Vidhi Enterprises Logo Right" style="margin-left: 0.5rem; margin-bottom: 11px;">
+                    </a>
+                </div>
+            </div>
+        </div>
+      
+    </nav>
+    <!-- Navbar End -->
+
+<!-- Hero Section -->
+    <section class="hero mt-2" data-aos="fade">
+        <div>
+            <h1 data-aos="fade-up" data-aos-delay="300">Knowledge Hub</h1>
+            <p data-aos="fade-up" data-aos-delay="500">Expert Answers to Your Irrigation Questions</p>
+        </div>
+    </section>
+
+    <!-- FAQs Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Frequently Asked Questions</h2>
+
+            <div class="faq" data-aos="fade-up" data-aos-delay="100">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    Why is my dripper not giving proper water? <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Reasons may be:</p>
+                    <ul>
+                        <li>Clogging due to dirt</li>
+                        <li>Low or high pressure</li>
+                        <li>Pipe bending</li>
+                        <li>Air-lock in the system</li>
+                    </ul>
+                    <p><strong>Solution:</strong> Clean the filter regularly and flush the laterals.</p>
+                </div>
+            </div>
+
+            <div class="faq" data-aos="fade-up" data-aos-delay="150">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    What is a venturi injector? Why is it used? <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>A venturi injector is a device used to apply fertilizers through the irrigation system. It works on pressure differences and saves time & labor.</p>
+                </div>
+            </div>
+
+            <div class="faq" data-aos="fade-up" data-aos-delay="200">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    What is the difference between sprinkler and rain gun? <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p><strong>Sprinkler:</strong> Used for small to medium fields; uniform water distribution.</p>
+                    <p><strong>Rain Gun:</strong> Covers large areas (up to 60–80 meters radius) and is useful for crops like sugarcane, fodder, groundnut, potato.</p>
+                </div>
+            </div>
+
+            <div class="faq" data-aos="fade-up" data-aos-delay="250">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    How to prevent clogging in drip systems? <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <ul>
+                        <li>Clean sand & screen filters weekly</li>
+                        <li>Flush lateral pipes</li>
+                        <li>Use clean water</li>
+                        <li>Use fertigation only with proper filtration</li>
+                        <li>Install air release valves</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="faq" data-aos="fade-up" data-aos-delay="300">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    Why are filters important in irrigation systems? <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Filters remove sand, mud, and other particles. Without filters, drippers and nozzles get blocked easily.</p>
+                </div>
+            </div>
+
+            <div class="faq" data-aos="fade-up" data-aos-delay="350">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    What are micro sprinklers? <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Micro sprinklers are small sprinklers used for nurseries, orchards, and vegetables. They save water and give gentle irrigation.</p>
+                </div>
+            </div>
+
+            <div class="faq" data-aos="fade-up" data-aos-delay="400">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    Do drip systems increase crop yield? <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes! Drip irrigation provides:</p>
+                    <ul>
+                        <li>Uniform water</li>
+                        <li>No water stress</li>
+                        <li>Efficient fertigation</li>
+                    </ul>
+                    <p>Overall yield can increase by 20–60%.</p>
+                </div>
+            </div>
+
+            <div class="faq" data-aos="fade-up" data-aos-delay="450">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    Why is my pipe bursting or leaking? <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Possible reasons:</p>
+                    <ul>
+                        <li>High pressure</li>
+                        <li>Poor quality pipes</li>
+                        <li>Wrong installation</li>
+                        <li>Not using clamps or grommets properly</li>
+                    </ul>
+                    <p><strong>Solution:</strong> Use ISI-quality products and proper fittings.</p>
+                </div>
+            </div>
+
+            <div class="faq" data-aos="fade-up" data-aos-delay="500">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    What is an air release valve? Why do we need it? <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>It releases trapped air from pipes during irrigation.</p>
+                    <ul>
+                        <li>Prevents bursting</li>
+                        <li>Improves water flow</li>
+                        <li>Protects pump and pipelines</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="faq" data-aos="fade-up" data-aos-delay="550">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    Does drip irrigation reduce electricity cost? <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes! It requires less water and shorter pump running time, saving 30–50% electricity.</p>
+                </div>
+            </div>
+
+            <div class="faq" data-aos="fade-up" data-aos-delay="600">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    Can I use drip irrigation for polyhouse farming? <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, it is the best method for polyhouse crops like capsicum, cucumber, strawberry, tomato.</p>
+                </div>
+            </div>
+
+            <div class="faq" data-aos="fade-up" data-aos-delay="650">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    What is drip irrigation? <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Drip irrigation is a system where water is supplied slowly and directly to the root zone of the plant. It saves water (up to 60–70%), increases yield, and reduces weed growth.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        AOS.init({duration: 1000, once: true});
+
+        function toggleAnswer(element) {
+            const answer = element.nextElementSibling;
+            const icon = element.querySelector('i');
+            answer.classList.toggle('show');
+            icon.style.transform = answer.classList.contains('show') ? 'rotate(180deg)' : 'rotate(0)';
+        }
+    </script>
+  
+    
+   <div id="footer-container"></div>
+
+    <!-- Back to Top -->
+    <a href="/index.html" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/parallax/parallax.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+    <script src="/js/chatbot-advanced.js"></script>
+
+
+</html>

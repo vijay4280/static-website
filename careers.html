@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>VIDHI ENTERPRISES - Company Profile</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">  
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+
+ <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1e40af;
+            --accent: #3b82f6;
+            --light: #dbeafe;
+            --dark: #1e293b;
+            --bg: #f8fafc;
+        }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--dark);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+        h1,h2,h3 { font-family: 'Playfair Display', serif; }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+        /* Hero */
+        header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 40%, #3b82f6 100%);
+            color: white;
+            text-align: center;
+            padding: 140px 0 100px;
+            position: relative;
+            overflow: hidden;
+        }
+        header::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><pattern id="grid" width="80" height="80" patternUnits="userSpaceOnUse"><path d="M80 0 L0 0 0 80" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="2"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+            animation: gridMove 30s linear infinite;
+        }
+        @keyframes gridMove { from { background-position: 0 0; } to { background-position: 80px 80px; } }
+        header h1 {
+            font-size: 4.5em;
+            margin-bottom: 15px;
+            animation: fadeInUp 1.5s ease-out;
+        }
+        header p {
+            font-size: 1.5em;
+            font-weight: 300;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.95;
+            animation: fadeInUp 1.5s ease-out 0.4s both;
+        }
+        @keyframes fadeInUp { from { opacity:0; transform:translateY(40px); } to { opacity:1; transform:translateY(0); } }
+
+        /* General Section */
+        section { padding: 100px 0; opacity: 0; transform: translateY(60px); transition: all 1.2s ease-out; }
+        section.visible { opacity:1; transform:translateY(0); }
+
+        h2 {
+            font-size: 3em;
+            text-align: center;
+            color: var(--primary);
+            margin-bottom: 60px;
+            position: relative;
+        }
+        h2::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            margin: 20px auto;
+            transition: width 1.2s ease-out;
+        }
+        section.visible h2::after { width: 150px; }
+
+        /* Why Work With Us */
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 35px;
+            margin-top: 50px;
+        }
+        .why-card {
+            background: white;
+            padding: 40px;
+            border-radius: 22px;
+            box-shadow: 0 12px 40px rgba(30,64,162,0.1);
+            text-align: center;
+            transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+            opacity: 0;
+            transform: translateY(50px) scale(0.92);
+            position: relative;
+            overflow: hidden;
+        }
+        .why-card.visible { opacity:1; transform: translateY(0) scale(1); }
+        .why-card:nth-child(1) { transition-delay: 0.2s; }
+        .why-card:nth-child(2) { transition-delay: 0.4s; }
+        .why-card:nth-child(3) { transition-delay: 0.6s; }
+        .why-card:nth-child(4) { transition-delay: 0.8s; }
+        .why-card:nth-child(5) { transition-delay: 1s; }
+
+        .why-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(59,130,246,0.1), transparent);
+            transition: left 0.8s ease;
+        }
+        .why-card:hover::before { left: 100%; }
+        .why-card:hover {
+            transform: translateY(-15px) scale(1.04);
+            box-shadow: 0 25px 60px rgba(30,64,162,0.2);
+        }
+
+        .why-icon {
+            font-size: 3em;
+            color: var(--accent);
+            margin-bottom: 25px;
+            display: block;
+            animation: floatIcon 5s ease-in-out infinite;
+        }
+        @keyframes floatIcon { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+        .why-card:hover .why-icon {
+            animation: none 1s ease;
+            color: var(--primary);
+        }
+        
+
+        .why-card h3 {
+            font-size: 1.1em;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        /* Current Opportunities */
+        .opportunities {
+            background: var(--light);
+        }
+        .opp-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+        .opp-category {
+            background: white;
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 10px 35px rgba(30,64,162,0.08);
+            transition: all 0.6s ease;
+            opacity: 0;
+            transform: translateY(40px);
+        }
+        .opp-category.visible { opacity:1; transform:translateY(0); }
+        .opp-category:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(30,64,162,0.15);
+        }
+        .opp-category h3 {
+            font-size: 1.8em;
+            color: var(--primary);
+            margin-bottom: 25px;
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 10px;
+        }
+        .opp-category ul {
+            list-style: none;
+        }
+        .opp-category li {
+            padding: 12px 0;
+            position: relative;
+            padding-left: 30px;
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: all 0.6s ease-out;
+        }
+        .opp-category.visible li {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .opp-category li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--accent);
+            font-size: 1.5em;
+
+        }
+
+        /* What We Look For */
+        .look-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        .look-item {
+            background: white;
+            padding: 30px;
+            border-radius: 18px;
+            text-align: center;
+            box-shadow: 0 8px 30px rgba(30,64,162,0.08);
+            transition: all 0.6s ease;
+            opacity: 0;
+            transform: scale(0.9);
+        }
+        .look-item.visible { opacity:1; transform:scale(1); }
+        .look-item:hover {
+            transform: scale(1.08);
+            box-shadow: 0 15px 45px rgba(30,64,162,0.18);
+        }
+        .look-item i {
+            font-size: 3em;
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+
+        /* How to Apply */
+        .apply {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            text-align: center;
+        }
+        .apply h2 { color: white; }
+        .apply h2::after { background: white; }
+        .apply-btn {
+            display: inline-block;
+            background: white;
+            color: var(--primary);
+            padding: 18px 50px;
+            font-size: 1.3em;
+            font-weight: 600;
+            border-radius: 50px;
+            text-decoration: none;
+            margin-top: 30px;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            animation: pulseBtn 2s infinite;
+        }
+        @keyframes pulseBtn { 0%,100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+        .apply-btn:hover {
+            transform: translateY(-5px) scale(1.08);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        /* Life at Vidhi */
+        .life {
+            background: #ffffff;
+            text-align: center;
+        }
+        .life p {
+            font-size: 1.4em;
+            max-width: 800px;
+            margin: 0 auto;
+            font-style: italic;
+            color: var(--primary);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1.5s ease-out;
+        }
+        .life.visible p { opacity:1; transform:translateY(0); }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 3em; }
+            h2 { font-size: 2.5em; }
+            .why-grid, .opp-categories, .look-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.15 });
+
+            document.querySelectorAll('section, h2, .why-card, .opp-category, .look-item, .life p').forEach(el => observer.observe(el));
+        });
+    </script>
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
+    </div>
+    <!-- Spinner End -->
+
+    <div id="header-container"></div>
+    
+   <!-- Navbar Start -->
+     <nav class="navbar navbar-expand-lg navbar-light sticky-top p-2" style="background-color: rgb(177, 226, 177);">
+        <div class="container-fluid px-0">
+            <div class="d-flex w-100 align-items-center justify-content-between flex-wrap flex-lg-nowrap">
+                <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5 mb-2 mb-lg-0">
+                    <img src="img/vidhi_logo-removebg-preview.png" class="ps-4 logo-img img-fluid" alt="Vidhi Enterprises Logo">
+                </a>
+                <form class="d-flex mx-auto my-2 my-lg-0 flex-grow-1" role="search" style="max-width: 400px; min-width: 180px; width: 100%;">
+                    <div class="input-group input-group-lg shadow-sm search-bar-rounded position-relative" style="width:100%;">
+                        <input id="searchInput" type="search" class="form-control rounded-pill border-1 ps-4" placeholder="Search" aria-label="Search" style="background: #f8f9fa; font-size: 1.1rem; min-height: 48px;" autocomplete="off">
+                        <button class="btn btn-primary rounded-pill d-flex align-items-center justify-content-center" type="submit" title="Search" style="width:48px; height:48px; margin-left:-48px; z-index:2; ">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        <ul id="searchSuggestions" class="search-suggestions"></ul>
+                    </div>
+                </form>
+                <button type="button" class="navbar-toggler ms-2 me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse w-100" id="navbarCollapse" style="margin-right: 2rem;">
+                <div class="navbar-nav ms-auto p-4 p-lg-0 align-items-lg-center">
+                    <a href="index.html" class="nav-item nav-link active "><b>Home</b></a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link  dropdown-toggle" data-bs-toggle="dropdown"><b>Products</b></a>
+                        <div class="dropdown-menu m-0 bg-light">
+                            <a href="/dripirri.html" class="dropdown-item"><b>Drip Irrigation</b></a>
+                            <a href="/sprinkler.html" class="dropdown-item"><b>Sprinkler Irrigation</b></a>
+                            <a href="/rainsprinkler.html" class="dropdown-item"><b>Rain Sprinkler</b></a>
+                            <a href="/landscape.html" class="dropdown-item"><b>Landscape Irrigation</b></a>
+                            <a href="/economical.html" class="dropdown-item"><b>Economical Irrigation</b></a>
+                            <a href="/Vidhi-kit.html" class="dropdown-item"><b>Vidhi Kit</b></a>
+                        </div>
+                    </div>
+                     <div class="nav-item dropdown">
+                        <a href="#" class="nav-link  dropdown-toggle" data-bs-toggle="dropdown"><b>About Us</b></a>
+                        <div class="dropdown-menu bg-light m-0">
+                            <a href="company-profile.html" class="dropdown-item"><b>Company Profile</b></a>
+                            <a href="founder-vision.html" class="dropdown-item"><b>Founder's Vision</b></a>
+                            <a href="our-journey.html" class="dropdown-item"><b>Our Journey</b></a>
+                            <a href="legacy-leader.html" class="dropdown-item"><b> Legacy &Leadership</b></a>
+                            <a href="manfacture.html" class="dropdown-item"><b>Manfacturing & Infrastructure</b></a>
+                            <a href="quality-policy.html" class="dropdown-item"><b>Quality Policy</b></a>
+                            <a href="sustainable.html" class="dropdown-item"><b>Sustainabilty Commitment</b></a>
+                            <a href="global-presence.html" class="dropdown-item"><b>Global Presence</b></a>
+                            <a href="knowledge-hub.html" class="dropdown-item"><b>Knowledge Hub</b></a>
+                            <a href="blog.html" class="dropdown-item"><b>Blog</b></a>
+                            <a href="careers.html" class="dropdown-item"><b>Careers</b></a>
+
+                        </div>
+                    </div>
+
+
+                    <a href="contact.html" class="nav-item  nav-link"><b>Contact Us</b></a>
+                    <a href="index.html" class="navbar-brand d-flex align-items-center ps-4 mt-3 mt-lg-0">
+                        <img src="img/logo-olored.png" class="logo-img img-fluid" alt="Vidhi Enterprises Logo Right" style="margin-left: 0.5rem; margin-bottom: 11px;">
+                    </a>
+                </div>
+            </div>
+        </div>
+      
+    </nav>
+    <!-- Navbar End -->
+
+ <header class="mt-2">
+    <div class="container">
+        <h1>👥 Careers</h1>
+        <p>Join a Legacy of Engineering, Integrity & Growth</p>
+    </div>
+</header>
+
+<section>
+    <div class="container">
+        <h2>Why Work With Us?</h2>
+        <p style="text-align:center; font-size:1.2em; max-width:900px; margin:0 auto 60px; color:#475569;">
+            At Vidhi Enterprises, we believe people are the strength behind every milestone we achieve. For over four decades, our company has been built by individuals who value precision, honesty, teamwork, and excellence — the same values our founder lived by.
+        </p>
+
+        <div class="why-grid">
+            <div class="why-card">
+                <span class="why-icon">History</span>
+                <h3>1. A Legacy of 40+ Years</h3>
+                <p>Be part of a company built on strong principles, consistent growth, and engineering excellence.</p>
+            </div>
+            <div class="why-card">
+                <span class="why-icon">Graduation Cap</span>
+                <h3>2. Learning-Focused Environment</h3>
+                <p>From moulding and production to quality testing and export management — every team member gets opportunities to learn, evolve, and upskill.</p>
+            </div>
+            <div class="why-card">
+                <span class="why-icon">Globe</span>
+                <h3>3. Exposure to Global Markets</h3>
+                <p>Work with clients and partners from the Middle East, Africa, and Asia and learn how international business works.</p>
+            </div>
+            <div class="why-card">
+                <span class="why-icon">Shield</span>
+                <h3>4. Stable, Ethical & Value-Driven Workplace</h3>
+                <p>Built on trust, the company culture is rooted in honesty, discipline, and respect for every employee.</p>
+            </div>
+            <div class="why-card">
+                <span class="why-icon">Tools</span>
+                <h3>5. Innovation & Modern Manufacturing</h3>
+                <p>Get hands-on experience with advanced moulding, extrusion, tool room systems, die casting, and quality labs.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="opportunities">
+    <div class="container">
+        <h2>Current Opportunities</h2>
+
+        <div class="opp-categories">
+            <div class="opp-category">
+                <h3>Production & Operations</h3>
+                <ul>
+                    <li>Machine Operators (Injection Moulding / Extrusion)</li>
+                    <li>Production Supervisors</li>
+                    <li>Quality Control Assistants</li>
+                    <li>Tool Room Technicians</li>
+                    <li>Assembly Line Workers</li>
+                </ul>
+            </div>
+            <div class="opp-category">
+                <h3>Office & Management</h3>
+                <ul>
+                    <li>Accounts Executive</li>
+                    <li>Sales & Marketing Coordinator</li>
+                    <li>Export Documentation Executive</li>
+                    <li>Inventory & Store Management</li>
+                </ul>
+            </div>
+            <div class="opp-category">
+                <h3>Field & Technical</h3>
+                <ul>
+                    <li>Service/Installation Technician</li>
+                    <li>Field Support Engineer</li>
+                    <li>Irrigation Product Trainer</li>
+                </ul>
+            </div>
+            <div class="opp-category">
+                <h3>Internships</h3>
+                <ul>
+                    <li>Engineering Intern (Mechanical/Plastic Tech)</li>
+                    <li>Marketing & International Business Intern</li>
+                    <li>Operations & Supply Chain Intern</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <h2>What We Look For</h2>
+        <div class="look-grid">
+            <div class="look-item">
+                <i class="fas fa-award"></i>
+                <h3>Commitment to Quality</h3>
+            </div>
+            <div class="look-item">
+                <i class="fas fa-book-reader"></i>
+                <h3>Willingness to Learn</h3>
+            </div>
+            <div class="look-item">
+                <i class="fas fa-clock"></i>
+                <h3>Discipline & Responsibility</h3>
+            </div>
+            <div class="look-item">
+                <i class="fas fa-lightbulb"></i>
+                <h3>Problem-Solving Attitude</h3>
+            </div>
+            <div class="look-item">
+                <i class="fas fa-hands-helping"></i>
+                <h3>Respect for Values & Teamwork</h3>
+            </div>
+            <div class="look-item">
+                <i class="fas fa-search"></i>
+                <h3>Technical Curiosity</h3>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="apply">
+    <div class="container">
+        <h2>How to Apply</h2>
+        <p style="font-size:1.3em; max-width:800px; margin:0 auto 40px;">
+            Email your resume to:<br>
+            <strong style="font-size:1.5em;">careers@vidhienterprises.com</strong>
+        </p>
+        <p style="max-width:800px; margin:0 auto 40px;">
+            Our HR team will contact shortlisted candidates for further rounds.
+        </p>
+        <a href="mailto:careers@vidhienterprises.com" class="apply-btn">
+            Send Your Resume
+        </a>
+    </div>
+</section>
+
+<section class="life">
+    <div class="container">
+        <h2>Life at Vidhi Enterprises</h2>
+        <p>
+            A workplace where you grow not just as a professional, but as a person — learning discipline, precision, and values from a legacy built since the 1980s.
+        </p>
+    </div>
+</section>
+
+    <div id="footer-container"></div>
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/parallax/parallax.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+    <script src="/js/chatbot-advanced.js"></script>
+
+
+</html>

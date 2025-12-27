@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Location Details - Vidhi Enterprises</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    
+    <!-- Include your existing stylesheets -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <div id="header-container"></div>
+
+    <!-- Location Details Container -->
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-12">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Location Details</li>
+                    </ol>
+                </nav>
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h1 id="countryName" class="mb-4">Country Details</h1>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="location-info">
+                                    <h3>Offices</h3>
+                                    <div id="officeList" class="list-group mb-4">
+                                        <!-- Office locations will be populated here -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="contact-info">
+                                    <h3>Contact Information</h3>
+                                    <div id="contactDetails">
+                                        <!-- Contact details will be populated here -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-4">
+                            <div class="col-12">
+                                <h3>Products & Services</h3>
+                                <div id="productsList" class="row">
+                                    <!-- Products will be populated here -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer-container"></div>
+
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Get country data from URL parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const country = urlParams.get('country');
+
+        // Function to load country data
+        async function loadCountryData() {
+            try {
+                const response = await fetch(`/data/location.json`);
+                const data = await response.json();
+                const countryData = data.countries[country];
+                
+                if (countryData) {
+                    // Update page title
+                    document.getElementById('countryName').textContent = countryData.name;
+                    
+                    // Populate office locations
+                    const officeList = document.getElementById('officeList');
+                    countryData.offices.forEach(office => {
+                        const officeItem = document.createElement('div');
+                        officeItem.className = 'list-group-item';
+                        officeItem.innerHTML = `
+                            <h5 class="mb-1">${office.name}</h5>
+                            <p class="mb-1">${office.address}</p>
+                            <small>${office.phone}</small>
+                        `;
+                        officeList.appendChild(officeItem);
+                    });
+
+                    // Populate contact details
+                    const contactDetails = document.getElementById('contactDetails');
+                    contactDetails.innerHTML = `
+                        <p><strong>Email:</strong> ${countryData.contact.email}</p>
+                        <p><strong>Phone:</strong> ${countryData.contact.phone}</p>
+                        <p><strong>Hours:</strong> ${countryData.contact.hours}</p>
+                    `;
+
+                    // Populate products
+                    const productsList = document.getElementById('productsList');
+                    countryData.products.forEach(product => {
+                        const productCol = document.createElement('div');
+                        productCol.className = 'col-md-4 mb-3';
+                        productCol.innerHTML = `
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">${product.name}</h5>
+                                    <p class="card-text">${product.description}</p>
+                                </div>
+                            </div>
+                        `;
+                        productsList.appendChild(productCol);
+                    });
+                } else {
+                    document.getElementById('countryName').textContent = 'Country not found';
+                }
+            } catch (error) {
+                console.error('Error loading country data:', error);
+            }
+        }
+
+        // Load data when page loads
+        window.addEventListener('load', loadCountryData);
+    </script>
+
+    <script src="/js/chatbot-advanced.js"></script>
+
+</html>

@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>VIDHI ENTERPRISES - Company Profile</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">  
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+
+   
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0f4c81;
+            --accent: #00a0df;
+            --light: #e6f7ff;
+            --dark: #0a2e4a;
+            --bg: #f8fdff;
+        }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--dark);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+        h1,h2,h3 { font-family: 'Playfair Display', serif; }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        /* Hero with Parallax Water Effect */
+        header {
+            height: 100vh;
+            min-height: 700px;
+            background: linear-gradient(135deg, rgba(15,76,129,0.95), rgba(0,160,223,0.9)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 720"><path fill="%23123" fill-opacity="0.15" d="M0,96L48,112C96,128,192,160,288,176C384,192,480,192,576,181.3C672,171,768,149,864,154.7C960,160,1056,192,1152,197.3C1248,203,1344,181,1392,170.7L1440,160L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>') center bottom/cover no-repeat;
+            color: white;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><circle cx="200" cy="200" r="80" fill="rgba(255,255,255,0.07)"/><circle cx="800" cy="600" r="120" fill="rgba(255,255,255,0.05)"/></svg>') repeat;
+            animation: floatBubbles 25s linear infinite;
+        }
+        @keyframes floatBubbles { from { transform: translateY(0); } to { transform: translateY(-1000px); } }
+
+        .hero-content {
+            text-align: center;
+            z-index: 2;
+            animation: fadeInUp 1.8s ease-out;
+        }
+        header h1 {
+            font-size: 5em;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.4);
+        }
+        .slogan {
+            font-size: 1.8em;
+            font-weight: 300;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+        .hero-text {
+            font-size: 1.3em;
+            max-width: 900px;
+            margin: 0 auto;
+            opacity: 0;
+            animation: fadeInUp 1.8s ease-out 0.6s both;
+        }
+        @keyframes fadeInUp { from { opacity:0; transform:translateY(50px); } to { opacity:1; transform:translateY(0); } }
+
+        /* Sections */
+        section { padding: 120px 0; opacity: 0; transform: translateY(80px); transition: all 1.4s ease-out; }
+        section.visible { opacity:1; transform:translateY(0); }
+
+        h2 {
+            font-size: 3.2em;
+            text-align: center;
+            color: var(--primary);
+            margin-bottom: 70px;
+            position: relative;
+        }
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            width: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            border-radius: 3px;
+            transition: width 1.5s ease-out, left 1.5s ease-out;
+            transform: translateX(-50%);
+        }
+        section.visible h2::after { width: 180px; }
+
+        /* Cards Grid */
+        .profile-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .profile-card {
+            background: white;
+            padding: 45px;
+            border-radius: 28px;
+            box-shadow: 0 15px 45px rgba(15,76,129,0.1);
+            text-align: center;
+            transition: all 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+            opacity: 0;
+            transform: translateY(60px) rotateX(15deg);
+            position: relative;
+            overflow: hidden;
+        }
+        .profile-card.visible { opacity:1; transform: translateY(0) rotateX(0); }
+        .profile-card:nth-child(1) { transition-delay: 0.2s; }
+        .profile-card:nth-child(2) { transition-delay: 0.4s; }
+        .profile-card:nth-child(3) { transition-delay: 0.6s; }
+        .profile-card:nth-child(4) { transition-delay: 0.8s; }
+        .profile-card:nth-child(5) { transition-delay: 1s; }
+        .profile-card:nth-child(6) { transition-delay: 1.2s; }
+
+        .profile-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0,160,223,0.12) 0%, transparent 70%);
+            transition: transform 0.8s ease;
+            transform: translateX(-100%) translateY(-100%) rotate(30deg);
+        }
+        .profile-card:hover::before { transform: translateX(100%) translateY(100%) rotate(30deg); }
+
+        .profile-card:hover {
+            transform: translateY(-20px) scale(1.04);
+            box-shadow: 0 30px 80px rgba(15,76,129,0.22);
+        }
+
+        .card-icon {
+            font-size: 4.5em;
+            color: var(--accent);
+            margin-bottom: 25px;
+            display: block;
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-20px)} }
+
+        .profile-card:hover .card-icon {
+            animation: bounceIn 1s ease;
+            color: var(--primary);
+        }
+        @keyframes bounceIn { 0%{transform:scale(0.3)} 50%{transform:scale(1.2)} 100%{transform:scale(1)} }
+
+        .profile-card h3 {
+            font-size: 1.8em;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .profile-card ul {
+            text-align: left;
+            padding-left: 20px;
+        }
+        .profile-card li {
+            padding: 10px 0;
+            position: relative;
+        }
+        .profile-card li::before {
+            content: 'Check Circle';
+            color: var(--accent);
+            position: absolute;
+            left: -25px;
+        }
+
+        /* Promise Section */
+        .promise {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            text-align: center;
+            padding: 140px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .promise::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.08" d="M0,160L48,176C96,192,192,224,288,213.3C384,203,480,181,576,186.7C672,192,768,224,864,213.3C960,203,1056,149,1152,122.7C1248,96,1344,96,1392,96L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') bottom/cover no-repeat;
+        }
+        .promise h2 { color:white; }
+        .promise h2::after { background: white; }
+        .promise p {
+            font-size: 1.5em;
+            max-width: 900px;
+            margin: 40px auto;
+            line-height: 1.8;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1.8s ease-out;
+        }
+        .promise.visible p { opacity:1; transform:translateY(0); }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 3.2em; }
+            h2 { font-size: 2.5em; }
+            .profile-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.15 });
+
+            document.querySelectorAll('section, h2').forEach(el => observer.observe(el));
+            document.querySelectorAll('.profile-card').forEach((card, i) => {
+                setTimeout(() => observer.observe(card), i * 150);
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
+    </div>
+    <!-- Spinner End -->
+
+    <div id="header-container"></div>
+    
+   <!-- Navbar Start -->
+     <nav class="navbar navbar-expand-lg navbar-light sticky-top p-2" style="background-color: rgb(177, 226, 177);">
+        <div class="container-fluid px-0">
+            <div class="d-flex w-100 align-items-center justify-content-between flex-wrap flex-lg-nowrap">
+                <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5 mb-2 mb-lg-0">
+                    <img src="img/vidhi_logo-removebg-preview.png" class="ps-4 logo-img img-fluid" alt="Vidhi Enterprises Logo">
+                </a>
+                <form class="d-flex mx-auto my-2 my-lg-0 flex-grow-1" role="search" style="max-width: 400px; min-width: 180px; width: 100%;">
+                    <div class="input-group input-group-lg shadow-sm search-bar-rounded position-relative" style="width:100%;">
+                        <input id="searchInput" type="search" class="form-control rounded-pill border-1 ps-4" placeholder="Search" aria-label="Search" style="background: #f8f9fa; font-size: 1.1rem; min-height: 48px;" autocomplete="off">
+                        <button class="btn btn-primary rounded-pill d-flex align-items-center justify-content-center" type="submit" title="Search" style="width:48px; height:48px; margin-left:-48px; z-index:2; ">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        <ul id="searchSuggestions" class="search-suggestions"></ul>
+                    </div>
+                </form>
+                <button type="button" class="navbar-toggler ms-2 me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse w-100" id="navbarCollapse" style="margin-right: 2rem;">
+                <div class="navbar-nav ms-auto p-4 p-lg-0 align-items-lg-center">
+                    <a href="index.html" class="nav-item nav-link active"><b>Home</b></a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><b></b>Products</b></a>
+                        <div class="dropdown-menu bg-light m-0">
+                            <a href="/dripirri.html" class="dropdown-item"><b>Drip Irrigation</b></a>
+                            <a href="/sprinkler.html" class="dropdown-item"><b>Sprinkler Irrigation</b></a>
+                            <a href="/rainsprinkler.html" class="dropdown-item"><b>Rain Sprinkler</b></a>
+                            <a href="/landscape.html" class="dropdown-item"><b>Landscape  Irrigation</b></a>
+                            <a href="/economical.html" class="dropdown-item"><b>Economical Irrigation</b></a>
+                            <a href="/vidhi-kit.html" class="dropdown-item"><b>Vidhi Kit</b></a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link  dropdown-toggle" data-bs-toggle="dropdown"><b>About Us</b></a>
+                        <div class="dropdown-menu bg-light m-0">
+                            <a href="company-profile.html" class="dropdown-item"><b>Company Profile</b></a>
+                            <a href="founder-vision.html" class="dropdown-item"><b>Founder's Vision</b></a>
+                            <a href="our-journey.html" class="dropdown-item"><b>Our Journey</b></a>
+                            <a href="legacy-leader.html" class="dropdown-item"><b> Legacy &Leadership</b></a>
+                            <a href="manfacture.html" class="dropdown-item"><b>Manfacturing & Infrastructure</b></a>
+                            <a href="quality-policy.html" class="dropdown-item"><b>Quality Policy</b></a>
+                            <a href="sustainable.html" class="dropdown-item"><b>Sustainabilty Commitment</b></a>
+                            <a href="global-presence.html" class="dropdown-item"><b>Global Presence</b></a>
+                            <a href="knowledge-hub.html" class="dropdown-item"><b>Knowledge Hub</b></a>
+                            <a href="blog.html" class="dropdown-item"><b>Blog</b></a>
+                            <a href="careers.html" class="dropdown-item"><b>Careers</b></a>
+
+                        </div>
+                    </div>
+                    
+                    <a href="contact.html" class="nav-item nav-link"><b>Contact Us</b></a>
+                    <a href="index.html" class="navbar-brand d-flex align-items-center ps-4 mt-3 mt-lg-0">
+                        <img src="img/logo-olored.png" class="logo-img img-fluid" alt="Vidhi Enterprises Logo Right" style="margin-left: 0.5rem; margin-bottom: 11px;">
+                    </a>
+                </div>
+            </div>
+        </div>
+      
+    </nav>
+    <!-- Navbar End -->
+
+<header class="mt-2">
+    <div class="container hero-content">
+        <h1>Company Profile </h1>
+        <p class="slogan">“INNOVATING PRECISION IRRIGATION SINCE 1983”</p>
+        <p class="hero-text">
+            At Vidhi Enterprises, we are committed to strengthening global agriculture and water-management systems through reliable, efficient, and high-quality irrigation components.<br><br>
+            Built on a strong foundation of engineering expertise, innovation, and uncompromising quality, we have grown into a trusted partner for farmers, distributors, irrigation companies, EPC contractors, landscaping firms, and government projects around the world.
+        </p>
+    </div>
+</header>
+
+<section>
+    <div class="container">
+        <h2>What We Do</h2>
+        <div class="profile-grid">
+            <div class="profile-card">
+                <i class="fas fa-tint"></i>
+                <h3>Drip Irrigation Pipes & Fittings</h3>
+            </div>
+            <div class="profile-card">
+                <i class="fas fa-snowflake"></i>
+                <h3>Inline & Online Emitters</h3>
+            </div>
+            <div class="profile-card">
+                <i class="fas fa-water"></i>
+                <h3>Sprinklers & Rainguns</h3>
+            </div>
+            <div class="profile-card">
+                <i class="fas fa-filter"></i>
+                <h3>Filters (Screen, Disc, Hydrocyclone)</h3>
+            </div>
+            <div class="profile-card">
+                <i class="fas fa-pipe"></i>
+                <h3>HDPE Pipes & Fittings</h3>
+            </div>
+            <div class="profile-card">
+                <i class="fas fa-valve"></i>
+                <h3>Valves & Control Devices</h3>
+            </div>
+            <div class="profile-card">
+                <i class="fas fa-tools"></i>
+                <h3>Micro-Irrigation Tools & Accessories</h3>
+            </div>
+        </div>
+        <p style="text-align:center; font-size:1.2em; margin-top:60px; color:#475569;">
+            Our products are designed to deliver <strong>maximum water efficiency</strong>, long field life, and dependable performance across diverse agricultural and landscape environments.
+        </p>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <h2>Our Manufacturing Strength</h2>
+        <div class="profile-grid">
+            <div class="profile-card">
+                <i class="fas fa-industry"></i>
+                <h3>High-Precision Extrusion Lines</h3>
+            </div>
+            <div class="profile-card">
+                <i class="fas fa-cogs"></i>
+                <h3>Advanced Moulding & Injection Machinery</h3>
+            </div>
+            <div class="profile-card">
+                <i class="fas fa-flask"></i>
+                <h3>In-House Tool Room & R&D</h3>
+            </div>
+            <div class="profile-card">
+                <i class="fas fa-vial"></i>
+                <h3>Comprehensive Quality Testing Lab</h3>
+            </div>
+            <div class="profile-card">
+                <i class="fas fa-search"></i>
+                <h3>Strict Inspection & Calibration</h3>
+            </div>
+            <div class="profile-card">
+                <i class="fas fa-certificate"></i>
+                <h3>Certified International Standards</h3>
+            </div>
+        </div>
+        <p style="text-align:center; font-size:1.2em; margin-top:60px; color:#475569;">
+            Each component is engineered with precision, ensuring durability, uniform flow, and superior field performance.
+        </p>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <h2>Export Capabilities</h2>
+        <div class="profile-grid">
+            <div class="profile-card">
+                <i class="fas fa-users"></i>
+                <h3>Dedicated Export Team</h3>
+            </div>
+            <div class="profile-card">
+                <i class="fas fa-box"></i>
+                <h3>Customized Packaging & Palletization</h3>
+            </div>
+            <div class="profile-card">
+                <i class="fas fa-plane"></i>
+                <h3>Flexible Shipping (FCL, LCL, Air)</h3>
+            </div>
+            <div class="profile-card">
+                <i class="fas fa-file-alt"></i>
+                <h3>Country-Specific Compliance</h3>
+            </div>
+            <div class="profile-card">
+                <i class="fas fa-clock"></i>
+                <h3>Consistent On-Time Delivery</h3>
+            </div>
+        </div>
+        <p style="text-align:center; font-size:1.2em; margin-top:60px; color:#475569;">
+            Our products are trusted in <strong>Qatar, Oman, UAE, Africa, Nepal</strong>, and many emerging agricultural markets.
+        </p>
+    </div>
+</section>
+
+<section class="promise">
+    <div class="container">
+        <h2>Our Promise</h2>
+        <p>
+            We believe irrigation is more than a system — it is the <strong>life source of crops</strong>.<br><br>
+            Our mission is to enable sustainable agriculture, reduce water wastage, and support communities with reliable irrigation solutions backed by strong engineering and customer service.
+        </p>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <h2>Core Values</h2>
+        <div class="profile-grid">
+            <div class="profile-card">
+                <i class="fas fa-gem"></i>
+                <h3>Quality First</h3>
+                <p>No compromise on material, performance, or durability.</p>
+            </div>
+            <div class="profile-card">
+                <i class="fas fa-lightbulb"></i>
+                <h3>Innovation</h3>
+                <p>Continuous improvement in design and processes.</p>
+            </div>
+            <div class="profile-card">
+                <i class="fas fa-handshake"></i>
+                <h3>Integrity</h3>
+                <p>Transparent practices and long-term relationships.</p>
+            </div>
+            <div class="profile-card">
+                <i class="fas fa-leaf"></i>
+                <h3>Sustainability</h3>
+                <p>Products that optimize water and energy efficiency.</p>
+            </div>
+            <div class="profile-card">
+                <i class="fas fa-heart"></i>
+                <h3>Customer Commitment</h3>
+                <p>Delivering value, reliability, and support.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <h2>Who We Serve</h2>
+        <div class="profile-grid">
+            <div class="profile-card">
+                <i class="fas fa-store"></i>
+                <h3>Irrigation Distributors</h3>
+            </div>
+            <div class="profile-card">
+                <i class="fas fa-hard-hat"></i>
+                <h3>EPC & Landscaping Contractors</h3>
+            </div>
+            <div class="profile-card">
+                <i class="fas fa-building"></i>
+                <h3>Government & NGO Projects</h3>
+            </div>
+            <div class="profile-card">
+                <i class="fas fa-seedling"></i>
+                <h3>Agro Input Suppliers</h3>
+            </div>
+            <div class="profile-card">
+                <i class="fas fa-home"></i>
+                <h3>Greenhouses & Nurseries</h3>
+            </div>
+            <div class="profile-card">
+                <i class="fas fa-tractor"></i>
+                <h3>Farmers & Community Networks</h3>
+            </div>
+        </div>
+    </div>
+</section>
+  
+
+    <div id="footer-container"></div>
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/parallax/parallax.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+    <script src="/js/chatbot-advanced.js"></script>
+
+
+</html>

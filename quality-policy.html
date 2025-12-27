@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>VIDHI ENTERPRISES - Company Profile</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">  
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        :root {
+            --dark: whitesmoke;
+            --primary: #1e3a8a;
+            --accent: #00d4ff;
+            --gold: #ffd700;
+            --light: #f0f9ff;
+        }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--dark);
+            color: #e0f7ff;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+        h1,h2,h3 { font-family: 'Playfair Display', serif; }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        /* Hero */
+        header {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0a1a2f 0%, #1e3a8a 60%, #00a0df 100%);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+        }
+        header::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 50% 30%, rgba(0,212,255,0.2) 0%, transparent 60%);
+            animation: pulseGlow 8s ease-in-out infinite;
+        }
+        @keyframes pulseGlow { 0%,100%{opacity:0.4} 50%{opacity:0.8} }
+
+        .hero-content {
+            z-index: 2;
+            animation: fadeInDown 2s ease-out;
+        }
+        header h1 {
+            font-size: 5.5em;
+            background: linear-gradient(90deg, #87cefa, #00e0ff, #ffd700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 25px;
+            text-shadow: 0 10px 40px rgba(0,0,0,0.5);
+        }
+        header p {
+            font-size: 1.8em;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0;
+            animation: fadeInUp 2s ease-out 0.8s both;
+        }
+        @keyframes fadeInDown { from{opacity:0;transform:translateY(-60px)}to{opacity:1;transform:translateY(0)} }
+        @keyframes fadeInUp   { from{opacity:0;transform:translateY(60px)}to{opacity:1;transform:translateY(0)} }
+
+        section { padding: 140px 0; position: relative; }
+
+        h2 {
+            font-size: 3.8em;
+            text-align: center;
+            background: linear-gradient(90deg, #87cefa, #00e0ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 90px;
+            position: relative;
+        }
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -25px;
+            left: 50%;
+            width: 0;
+            height: 6px;
+            background: var(--accent);
+            border-radius: 3px;
+            box-shadow: 0 0 20px var(--accent);
+            transition: width 1.8s ease-out;
+            transform: translateX(-50%);
+        }
+        section.visible h2::after { width: 250px; }
+
+        /* Quality Cards with 3D Flip & Glowing Border */
+        .quality-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 50px;
+            margin-top: 60px;
+        }
+        .quality-card {
+            perspective: 1500px;
+            height: 480px;
+            opacity: 0;
+            transform: translateY(100px);
+            transition: all 1.2s ease-out;
+        }
+        .quality-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .quality-card:nth-child(1) { transition-delay: 0.2s; }
+        .quality-card:nth-child(2) { transition-delay: 0.4s; }
+        .quality-card:nth-child(3) { transition-delay: 0.6s; }
+        .quality-card:nth-child(4) { transition-delay: 0.8s; }
+        .quality-card:nth-child(5) { transition-delay: 1s; }
+        .quality-card:nth-child(6) { transition-delay: 1.2s; }
+
+        .card-inner {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.9s cubic-bezier(0.34,1.56,0.64,1);
+            border-radius: 32px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+        }
+        .quality-card:hover .card-inner {
+            transform: rotateY(12deg) rotateX(8deg) scale(1.05);
+        }
+
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 32px;
+            padding: 45px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .card-front {
+            background: linear-gradient(135deg, rgba(15,76,129,0.9), rgba(0,160,223,0.7));
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(0,212,255,0.4);
+        }
+        .card-back {
+            background: linear-gradient(135deg, #001f3f, #0f4c75);
+            transform: rotateY(180deg);
+        }
+        .quality-card:hover .card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .card-icon {
+            font-size: 5.5em;
+            color: var(--accent);
+            margin-bottom: 30px;
+            animation: 0 0 40px var(--accent);
+            animation: floatIcon 6s ease-in-out infinite;
+        }
+        @keyframes floatIcon { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-25px)} }
+
+        .quality-card:hover .card-icon {
+            animation: iconExplode 1.2s ease-out;
+        }
+        @keyframes iconExplode {
+            0%   { transform: scale(1) rotate(0); }
+            50%  { transform: scale(1.6) rotate(180deg); }
+            100% { transform: scale(1) rotate(360deg); }
+        }
+
+        .card-front h3 {
+            font-size: 2em;
+            margin: 20px 0;
+            color: white;
+        }
+        .card-front ul {
+            text-align: left;
+            padding-left: 20px;
+            font-size: 1.1em;
+        }
+        .card-front li {
+            margin: 12px 0;
+            position: relative;
+        }
+        .card-front li::before {
+            content: '✔';
+            position: absolute;
+            left: -20px;
+            color: var(--gold);
+            animation: checkPulse 2s ease-in-out infinite;
+        }
+        @keyframes checkPulse { 0%,100%{transform:scale(1)} 50%{transform:scale(1.4)} }
+
+        .card-back {
+            color: white;
+            text-align: center;
+        }
+        .card-back strong {
+            font-size: 1.4em;
+            color: var(--gold);
+            display: block;
+            margin: 20px 0;
+        }
+
+        /* Promise Section */
+        .promise {
+            background: linear-gradient(135deg, var(--primary), #001f3f);
+            text-align: center;
+            padding: 160px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .promise::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: repeating-conic-gradient(from 0deg at 50% 50%, rgba(0,212,255,0.05) 0deg, transparent 20deg, transparent 40deg, rgba(0,212,255,0.05) 60deg);
+            animation: rotateConic 30s linear infinite;
+        }
+        @keyframes rotateConic { from{transform:rotate(0deg)}to{transform:rotate(360deg)} }
+
+        .promise h2 { color:white; margin-bottom: 70px; }
+        .promise p {
+            font-size: 1.8em;
+            max-width: 1000px;
+            margin: 0 auto;
+            line-height: 2.2;
+            opacity: 0;
+            transform: scale(0.9);
+            transition: all 2s ease-out;
+        }
+        .promise.visible p { opacity:1; transform:scale(1); }
+
+        .seal {
+            width: 220px;
+            height: 220px;
+            margin: 80px auto 0;
+            background: radial-gradient(circle, #ffd700, #ffb300);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4em;
+            font-weight: bold;
+            color: #0a1a2f;
+            box-shadow: 0 0 80px rgba(255,215,0,0.8);
+            animation: sealPulse 4s ease-in-out infinite;
+        }
+        @keyframes sealPulse { 0%,100%{transform:scale(1)}50%{transform:scale(1.1)} }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 3.5em; }
+            h2 { font-size: 2.8em; }
+            .quality-grid { grid-template-columns: 1fr; }
+            .card-front, .card-back { padding: 35px; }
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver(e => {
+                e.forEach(entry => {
+                    if (entry.isIntersecting) entry.target.classList.add('visible');
+                });
+            }, { threshold: 0.15 });
+
+            document.querySelectorAll('section, h2, .quality-card').forEach(el => observer.observe(el));
+        });
+    </script>
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
+    </div>
+    <!-- Spinner End -->
+
+    <div id="header-container"></div>
+    
+   <!-- Navbar Start -->
+     <nav class="navbar navbar-expand-lg navbar-light sticky-top p-2" style="background-color: rgb(177, 226, 177);">
+        <div class="container-fluid px-0">
+            <div class="d-flex w-100 align-items-center justify-content-between flex-wrap flex-lg-nowrap">
+                <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5 mb-2 mb-lg-0">
+                    <img src="img/vidhi_logo-removebg-preview.png" class="ps-4 logo-img img-fluid" alt="Vidhi Enterprises Logo">
+                </a>
+                <form class="d-flex mx-auto my-2 my-lg-0 flex-grow-1" role="search" style="max-width: 400px; min-width: 180px; width: 100%;">
+                    <div class="input-group input-group-lg shadow-sm search-bar-rounded position-relative" style="width:100%;">
+                        <input id="searchInput" type="search" class="form-control rounded-pill border-1 ps-4" placeholder="Search" aria-label="Search" style="background: #f8f9fa; font-size: 1.1rem; min-height: 48px;" autocomplete="off">
+                        <button class="btn btn-primary rounded-pill d-flex align-items-center justify-content-center" type="submit" title="Search" style="width:48px; height:48px; margin-left:-48px; z-index:2; ">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        <ul id="searchSuggestions" class="search-suggestions"></ul>
+                    </div>
+                </form>
+                <button type="button" class="navbar-toggler ms-2 me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse w-100" id="navbarCollapse" style="margin-right: 2rem;">
+                <div class="navbar-nav ms-auto p-4 p-lg-0 align-items-lg-center">
+                    <a href="index.html" class="nav-item nav-link active "><b>Home</b></a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link  dropdown-toggle" data-bs-toggle="dropdown"><b>Products</b></a>
+                        <div class="dropdown-menu m-0 bg-light">
+                            <a href="/dripirri.html" class="dropdown-item"><b>Drip Irrigation</b></a>
+                            <a href="/sprinkler.html" class="dropdown-item"><b>Sprinkler Irrigation</b></a>
+                            <a href="/rainsprinkler.html" class="dropdown-item"><b>Rain Sprinkler</b></a>
+                            <a href="/landscape.html" class="dropdown-item"><b>Landscape Irrigation</b></a>
+                            <a href="/economical.html" class="dropdown-item"><b>Economical Irrigation</b></a>
+                            <a href="/Vidhi-kit.html" class="dropdown-item"><b>Vidhi Kit</b></a>
+                        </div>
+                    </div>
+                     <div class="nav-item dropdown">
+                        <a href="#" class="nav-link  dropdown-toggle" data-bs-toggle="dropdown"><b>About Us</b></a>
+                        <div class="dropdown-menu bg-light m-0">
+                            <a href="company-profile.html" class="dropdown-item"><b>Company Profile</b></a>
+                            <a href="founder-vision.html" class="dropdown-item"><b>Founder's Vision</b></a>
+                            <a href="our-journey.html" class="dropdown-item"><b>Our Journey</b></a>
+                            <a href="legacy-leader.html" class="dropdown-item"><b> Legacy &Leadership</b></a>
+                            <a href="manfacture.html" class="dropdown-item"><b>Manfacturing & Infrastructure</b></a>
+                            <a href="quality-policy.html" class="dropdown-item"><b>Quality Policy</b></a>
+                            <a href="sustainable.html" class="dropdown-item"><b>Sustainabilty Commitment</b></a>
+                            <a href="global-presence.html" class="dropdown-item"><b>Global Presence</b></a>
+                            <a href="knowledge-hub.html" class="dropdown-item"><b>Knowledge Hub</b></a>
+                            <a href="blog.html" class="dropdown-item"><b>Blog</b></a>
+                            <a href="careers.html" class="dropdown-item"><b>Careers</b></a>
+
+                        </div>
+                    </div>
+
+
+                    <a href="contact.html" class="nav-item  nav-link"><b>Contact Us</b></a>
+                    <a href="index.html" class="navbar-brand d-flex align-items-center ps-4 mt-3 mt-lg-0">
+                        <img src="img/logo-olored.png" class="logo-img img-fluid" alt="Vidhi Enterprises Logo Right" style="margin-left: 0.5rem; margin-bottom: 11px;">
+                    </a>
+                </div>
+            </div>
+        </div>
+      
+    </nav>
+    <!-- Navbar End -->
+
+
+<header class="mt-2">
+    <div class="container hero-content">
+        <h1>Our Quality Commitment</h1>
+        <p>Precision is not a feature — it is our identity.</p>
+    </div>
+</header>
+
+<section>
+    <div class="container">
+        <h2>Quality Commitments</h2>
+
+        <div class="quality-grid">
+            <div class="quality-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <i class="fas fa-ruler-combined card-icon"></i>
+                        <h3>1. Precision Engineering</h3>
+                        <ul>
+                            <li>Strict dimensional accuracy</li>
+                            <li>Perfect flow uniformity</li>
+                            <li>Consistent performance parameters</li>
+                        </ul>
+                    </div>
+                    <div class="card-back">
+                        <strong>Every component is born perfect.</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quality-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <i class="fas fa-vial card-icon"></i>
+                        <h3>2. 100% Batch Testing</h3>
+                        <ul>
+                            <li>Flow & discharge testing</li>
+                            <li>Pressure testing</li>
+                            <li>Strength & durability checks</li>
+                            <li>Visual & dimensional inspection</li>
+                            <li>Field simulation testing</li>
+                        </ul>
+                    </div>
+                    <div class="card-back">
+                        <strong>Zero defects. Zero exceptions.</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quality-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <i class="fas fa-gem card-icon"></i>
+                        <h3>3. High-Grade Raw Materials</h3>
+                        <ul>
+                            <li>Certified & tested polymers</li>
+                            <li>UV-stabilized compounds</li>
+                            <li>Food-grade options available</li>
+                        </ul>
+                    </div>
+                    <div class="card-back">
+                        <strong>Only the best goes in.</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quality-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <i class="fas fa-tools card-icon"></i>
+                        <h3>4. In-House Tool Room Control</h3>
+                        <ul>
+                            <li>Long mould life</li>
+                            <li>Zero variation</li>
+                            <li>Fast new product development</li>
+                        </ul>
+                    </div>
+                    <div class="card-back">
+                        <strong>Precision starts at the mould.</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quality-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <i class="fas fa-cog-cogs card-icon"></i>
+                        <h3>5. Standardized Manufacturing</h3>
+                        <ul>
+                            <li>Injection moulding</li>
+                            <li>Extrusion</li>
+                            <li>Gravity die casting</li>
+                            <li>Assembly & packaging</li>
+                        </ul>
+                    </div>
+                    <div class="card-back">
+                        <strong>Uniformity in every batch.</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quality-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <i class="fas fa-chart-line card-icon"></i>
+                        <h3>6. Continuous Improvement</h3>
+                        <ul>
+                            <li>Machine & mould upgrades</li>
+                            <li>Advanced testing systems</li>
+                            <li>Team training</li>
+                            <li>Customer feedback integration</li>
+                        </ul>
+                    </div>
+                    <div class="card-back">
+                        <strong>We get better every day.</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="promise">
+    <div class="container">
+        <h2>Our Promise</h2>
+        <p>
+            To supply irrigation components that <strong>farmers trust</strong>,<br>
+            <strong>partners rely on</strong>, and <strong>global markets value</strong>.<br><br>
+            Quality is our identity — and it will <strong>never be compromised</strong>.
+        </p>
+
+        <div class="seal">
+            QUALITY<br>GUARANTEED
+        </div>
+
+        <p style="margin-top:80px; font-size:1.4em;">
+            Customer Commitment • Compliance • Assurance • Continuous Evolution
+        </p>
+    </div>
+</section>
+  
+
+    <div id="footer-container"></div>
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/parallax/parallax.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+    <script src="/js/chatbot-advanced.js"></script>
+
+
+</html>

@@ -1,0 +1,17 @@
+body { font-family: Arial; background:#f4f6f8; }
+nav a {
+  margin: 10px;
+  padding: 10px 15px;
+  background: #2e7d32;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+}
+.login-body { display:flex; justify-content:center; align-items:center; height:100vh; }
+.login-box {
+  background:#fff; padding:30px; width:300px; border-radius:10px;
+}
+.login-box input, .login-box button {
+  width:100%; margin:10px 0; padding:10px;
+}
+button { background:#2e7d32; color:#fff; border:none; cursor:pointer; }

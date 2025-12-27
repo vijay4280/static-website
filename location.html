@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Location Details</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style>body{padding:24px;background:#f8f9fa} .card{max-width:900px;margin:24px auto}</style>
+  </head>
+  <body>
+    <div class="card">
+      <div class="card-body">
+        <h3 id="placeTitle">Location Details</h3>
+        <p id="placeSummary">Loading...</p>
+        <div id="extra"></div>
+        <a href="index.html" class="btn btn-secondary mt-3">Back to Home</a>
+      </div>
+    </div>
+
+    <script>
+      // Parse query params
+      function qs(key) {
+        const params = new URLSearchParams(window.location.search);
+        return params.get(key);
+      }
+
+      const place = qs('place');
+      const lat = qs('lat');
+      const lng = qs('lng');
+
+      const titleEl = document.getElementById('placeTitle');
+      const sumEl = document.getElementById('placeSummary');
+      const extraEl = document.getElementById('extra');
+
+      if (place) {
+        titleEl.textContent = decodeURIComponent(place);
+        sumEl.textContent = 'Showing details for ' + decodeURIComponent(place) + '. Use your internal data or existing pages to fill real content.';
+      } else if (lat && lng) {
+        titleEl.textContent = 'Coordinates: ' + lat + ', ' + lng;
+        sumEl.textContent = 'You clicked on the map at the coordinates above. You can link these to a records DB or show local contact info.';
+        extraEl.innerHTML = '<p><strong>Map preview:</strong></p><div id="miniMap" style="height:300px;border:1px solid #ddd"></div>';
+
+        // Add a tiny Leaflet map if Leaflet is available
+        (function addMiniMap() {
+          var script = document.createElement('script');
+          script.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+          script.onload = function () {
+            var link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
+            document.head.appendChild(link);
+            var m = L.map('miniMap', { dragging: false, scrollWheelZoom: false }).setView([parseFloat(lat), parseFloat(lng)], 10);
+            L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',).addTo(m);
+            L.marker([parseFloat(lat), parseFloat(lng)]).addTo(m);
+          };
+          document.body.appendChild(script);
+        })();
+
+      } else {
+        titleEl.textContent = 'No location provided';
+        sumEl.textContent = 'Open this page via the interactive map or by linking with ?place=NAME or ?lat=...&lng=...';
+      }
+    </script>
+  
+    <script src="/js/chatbot-advanced.js"></script>
+
+</html>
+

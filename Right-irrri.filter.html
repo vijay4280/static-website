@@ -1,0 +1,284 @@
+<!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">  
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body style="background-color: rgb(203, 229, 203);">
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
+    </div>
+    <!-- Spinner End -->
+
+    <div id="header-container"></div>
+
+<!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top p-2" style="background-color: rgb(177, 226, 177);">
+        <div class="container-fluid px-0">
+            <div class="d-flex w-100 align-items-center justify-content-between flex-wrap flex-lg-nowrap">
+                <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5 mb-2 mb-lg-0">
+                    <img src="img/vidhi_logo-removebg-preview.png" class="ps-4 logo-img img-fluid"
+                        alt="Vidhi Enterprises Logo">
+                </a>
+                <form class="d-flex mx-auto my-2 my-lg-0 flex-grow-1" role="search"
+                    style="max-width: 400px; min-width: 180px; width: 100%;">
+                    <div class="input-group input-group-lg shadow-sm search-bar-rounded position-relative"
+                        style="width:100%;">
+                        <input id="searchInput" type="search" class="form-control rounded-pill border-1 ps-4"
+                            placeholder="Search" aria-label="Search"
+                            style="background: #f8f9fa; font-size: 1.1rem; min-height: 48px;" autocomplete="off">
+                        <button class="btn btn-primary rounded-pill d-flex align-items-center justify-content-center"
+                            type="submit" title="Search"
+                            style="width:48px; height:48px; margin-left:-48px; z-index:2; ">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        <ul id="searchSuggestions" class="search-suggestions"></ul>
+                    </div>
+                </form>
+                <button type="button" class="navbar-toggler ms-2 me-4" data-bs-toggle="collapse"
+                    data-bs-target="#navbarCollapse" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse w-100" id="navbarCollapse" style="margin-right: 2rem;">
+                <div class="navbar-nav ms-auto p-4 p-lg-0 align-items-lg-center">
+                    <a href="index.html" class="nav-item nav-link active "><b>Home</b></a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link  dropdown-toggle" data-bs-toggle="dropdown"><b>Products</b></a>
+                        <div class="dropdown-menu m-0 bg-light">
+                            <a href="/dripirri.html" class="dropdown-item"><b>Drip Irrigation</b></a>
+                            <a href="/sprinkler.html" class="dropdown-item"><b>Sprinkler Irrigation</b></a>
+                            <a href="/rainsprinkler.html" class="dropdown-item"><b>Rain Sprinkler</b></a>
+                            <a href="/landscape.html" class="dropdown-item"><b>Landscape Irrigation</b></a>
+                            <a href="/economical.html" class="dropdown-item"><b>Economical Irrigation</b></a>
+                        <a href="/vidhi-kit.html" class="dropdown-item"><b>Vidhi Kit</b></a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link  dropdown-toggle" data-bs-toggle="dropdown"><b>About Us</b></a>
+                        <div class="dropdown-menu bg-light m-0">
+                            <a href="company-profile.html" class="dropdown-item"><b>Company Profile</b></a>
+                            <a href="founder-vision.html" class="dropdown-item"><b>Founder's Vision</b></a>
+                            <a href="our-journey.html" class="dropdown-item"><b>Our Journey</b></a>
+                            <a href="legacy-leader.html" class="dropdown-item"><b> Legacy &Leadership</b></a>
+                            <a href="manfacture.html" class="dropdown-item"><b>Manfacturing & Infrastructure</b></a>
+                            <a href="quality-policy.html" class="dropdown-item"><b>Quality Policy</b></a>
+                            <a href="sustainable.html" class="dropdown-item"><b>Sustainabilty Commitment</b></a>
+                            <a href="global-presence.html" class="dropdown-item"><b>Global Presence</b></a>
+                            <a href="knowledge-hub.html" class="dropdown-item"><b>Knowledge Hub</b></a>
+                            <a href="blog.html" class="dropdown-item"><b>Blog</b></a>
+                            <a href="careers.html" class="dropdown-item"><b>Careers</b></a>
+
+                        </div>
+                    </div>
+
+                    <a href="contact.html" class="nav-item  nav-link"><b>Contact Us</b></a>
+                    <a href="index.html" class="navbar-brand d-flex align-items-center ps-4 mt-3 mt-lg-0">
+                        <img src="img/logo-olored.png" class="logo-img img-fluid" alt="Vidhi Enterprises Logo Right"
+                            style="margin-left: 0.5rem; margin-bottom: 11px;">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </nav>
+    <!-- Navbar End -->
+
+
+  <!-- Page Header Start -->
+    <div class="container-fluid page-header py-5 mb-5 mt-2 wow fadeIn" data-wow-delay="0.1s" style="background-image: url('./img/9.png'); background-size: cover; background-position: center;">
+        <div class="container text-center py-5">
+            <h1 class="display-3 text-white mb-4 animated slideInDown">How to Choose the Right Irrigation Filter</h1>
+           
+        </div>
+    </div>
+
+  <!-- Introduction -->
+  <section class="max-w-5xl mx-auto px-4 py-12">
+    <h2 class="text-2xl font-semibold mb-4 text-green-700 text-center"><u>Know Your Water Source</u></h2>
+    <p class="text-lg leading-relaxed text-center">
+      	Each water source contains different types of impurities.
+    </p>
+  </section>
+
+ <!-- Maintenance Schedule -->
+  <section class="max-w-5xl mx-auto px-4 py-12">
+    <div class="overflow-x-auto">
+      <table class="min-w-full border border-gray-300 rounded-xl overflow-hidden">
+        <thead class="bg-green-700 text-white">
+          <tr >
+            <th class="py-3 px-4 text-left">Water Source</th>
+            <th class="py-3 px-4 text-left">Common Impurities</th>
+            <th class="py-3 px-4 text-left">Recommended Filter Type</th>
+          </tr>
+        </thead>
+        <tbody class="bg-white text-success">
+          <tr class="border-b">
+            <td class="py-3 px-4"><b>Borewell / Tube well</b></td>
+            <td class="py-3 px-4"><b>Sand, silt, small particles</b></td>
+            <td class="py-3 px-4"><b>Screen Filter</b></td>
+          </tr>
+          <tr class="border-b bg-gray-50">
+            <td class="py-3 px-4"><b>Canal / River</b></td>
+            <td class="py-3 px-4"><b>Algae, leaves, organic matter</b></td>
+            <td class="py-3 px-4"><b>Disc Filter</b></td>
+          </tr>
+          <tr class="border-b">
+            <td class="py-3 px-4"><b>Pond / Tank</b></td>
+            <td class="py-3 px-4"><b>Sand + organic matter</b></td>
+            <td class="py-3 px-4"><b>Sand Filter + Disc Filter (Combination)</b></td>
+          </tr>
+          <tr class="border-b bg-gray-50">
+            <td class="py-3 px-4"><b>Municipal / Tap Water</b></td>
+            <td class="py-3 px-4"><b>Minor dust or particles</b></td>
+            <td class="py-3 px-4"><b>Screen Filter</b></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Maintenance Tasks -->
+  <section id="maintenance-tasks" class="bg-white py-12">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-2xl font-semibold text-green-700 mb-8 text-center"><u>Check the Water Quality</u></h2>
+      
+        
+        <!-- Task Cards -->
+        <div class="p-6 bg-gray-100 rounded-2xl shadow text-center ">
+          <ul class="box" style="color:  rgb(3, 3, 123); text-justify: auto; font-size: medium;">
+                    <li class="mt-2"><b>â€¢	If water has sand or fine soil â†’ Use Screen Filter</b></li>
+                    <li class="mt-2"><b>â€¢	If water has algae or organic matter â†’ Use Disc Filter</b></li>
+                    <li class="mt-2"><b>â€¢	If water is muddy or mixed with debris â†’ Use Sand + Disc Filter</b></li>
+                   </ul>
+        </div>
+    </div>
+  </section>
+
+  <!-- Maintenance Schedule -->
+  <section class="max-w-5xl mx-auto px-4 py-12">
+    <h2 class="text-2xl font-semibold text-green-700 mb-6 text-center"><u>Match the Filter to Your Irrigation Type</u> </h2>
+    <div class="overflow-x-auto">
+      <table class="min-w-full border border-gray-300 rounded-xl overflow-hidden">
+        <thead class="bg-green-700 text-white text-center">
+          <tr>
+            <th class="py-3 px-4 text-left">Irrigation Type</th>
+            <th class="py-3 px-4 text-left">Suitable Filter</th>
+          </tr>
+        </thead>
+        <tbody class="bg-white text-success">
+          <tr class="border-b">
+            <td class="py-3 px-4">Drip Irrigation</td>
+            <td class="py-3 px-4">Disc Filter / Screen Filter</td>
+          </tr>
+          <tr class="border-b bg-gray-50">
+            <td class="py-3 px-4">Sprinkler System</td>
+            <td class="py-3 px-4">Screen Filter/ Disc Filter</td>
+          </tr>
+          <tr class="border-b">
+            <td class="py-3 px-4">Large Area / Farm</td>
+            <td class="py-3 px-4">Sand Filter + Disc Filter</td>
+          </tr>
+          <tr class="border-b bg-gray-50">
+            <td class="py-3 px-4">Greenhouse / Nursery</td>
+            <td class="py-3 px-4">Disc Filter/ Screen Filter</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Troubleshooting Section -->
+  <section class="bg-green-50 py-12">
+    <div class="max-w-5xl mx-auto px-4">
+      <h2 class="text-2xl font-semibold text-700 mb-6 text-center text-dark"><u>Consider Flow Rate and Micron Rating</u></h2>
+      <ul class="space-y-3 text-lg text-success">
+        <li>ðŸ’§ <b>Choose a filter that matches your systemâ€™s flow rate (mÂ³/hr).</b></li>
+        <li>ðŸŒ¿ <b><b>Micron rating</b>  decides how fine the filtration is:</li></ul>
+        <ul class="box text-center text-success">
+                    <li class="mt-2"><b>o	100â€“150 Micron â†’ Ideal for drip irrigation</b></li>
+                    <li class="mt-2"><b>o	200 Micron â†’ Ideal for sprinklers</b></li>
+                    <li class="mt-2"><b>o	Below 100 Micron â†’ For very fine filtration</b></li>
+                    </ul>
+    </div>
+  </section>
+
+  <!-- Recommended Tools
+  <section class="max-w-6xl mx-auto px-4 py-12">
+    <h2 class="text-2xl font-semibold text-green-700 mb-6 text-center">Recommended Maintenance Tools</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="p-6 bg-white rounded-2xl shadow text-center">
+        <h3 class="font-bold mb-2">Filter Cleaning Brush</h3>
+        <p class="mb-4">Perfect for removing fine debris without damaging filter mesh.</p>
+        <a href="#" class="bg-green-700 text-white px-4 py-2 rounded-full">Buy Now</a>
+      </div>
+      <div class="p-6 bg-white rounded-2xl shadow text-center">
+        <h3 class="font-bold mb-2">Flush Valves</h3>
+        <p class="mb-4">Ensure easy system flushing and prevent line blockages.</p>
+        <a href="#" class="bg-green-700 text-white px-4 py-2 rounded-full">Shop Now</a>
+      </div>
+      <div class="p-6 bg-white rounded-2xl shadow text-center">
+        <h3 class="font-bold mb-2">Pressure Gauge</h3>
+        <p class="mb-4">Monitor system pressure for uniform water distribution.</p>
+        <a href="#" class="bg-green-700 text-white px-4 py-2 rounded-full">Order Now</a>
+      </div>
+    </div>
+  </section> -->
+
+ <!-- Contact Section -->
+  <section class="bg-700 text-white py-12 text-center" style="background-color: rgb(123, 188, 123);">
+    <h2 class="text-2xl font-semibold mb-4"><u>Go for Easy Maintenance</u></h2>
+    <p class="mb-6" style="font-size: x-large;">Always choose a filter that is easy to clean and maintain:</p>
+    <ul class="space-y-3 text-lg text-white">
+        <li>ðŸ’§ <b>â€¢	Screen Filter:</b> Easy to remove and wash manually</li>
+        <li>ðŸŒ¿ <b>â€¢	Disc Filter: </b>  Can be cleaned or backwashed easily</li>
+        <li>ðŸŒ¿ <b>â€¢	Sand Filter:</b>   Requires regular backwashing for best performance</li>
+      </ul>
+    <!-- <a href="mailto:gogreenvibhor@gmail.com" class="bg-white text-green-700 px-6 py-3 rounded-full font-semibold hover:bg-green-100 transition">Request Support</a> -->
+  </section>
+
+   <div id="footer-container"></div>
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/parallax/parallax.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+    <script src="/js/chatbot-advanced.js"></script>
+
+
+</html>

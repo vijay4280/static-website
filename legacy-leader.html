@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>VIDHI ENTERPRISES - Company Profile</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">  
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fdfbf5;
+            color: #3d2b1f;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+
+        header {
+            background: linear-gradient(135deg, #8B4513 0%, #D2691E 50%, #DEB887 100%);
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        header::before {
+            content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            animation: shimmer 3s infinite;
+        }
+        @keyframes shimmer { 0% { left: -100%; } 100% { left: 100%; } }
+        header h1 {
+            font-size: 3.8em; font-weight: 700; margin: 0 0 10px 0;
+            animation: fadeInUp 1.5s ease-out, glow 2.5s ease-in-out infinite alternate;
+        }
+        @keyframes glow {
+            from { text-shadow: 0 0 10px rgba(255,255,255,0.6); }
+            to { text-shadow: 0 0 20px rgba(255,255,255,255,0.9), 0 0 30px rgba(139,69,19,0.6); }
+        }
+        .header-subtitle { font-size: 1.4em; font-weight: 300; animation: fadeInUp 1.5s ease-out 0.4s both; }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+
+        section { padding: 90px 0; opacity: 0; transform: translateY(70px); transition: opacity 1s, transform 1s; }
+        section.visible { opacity: 1; transform: translateY(0); }
+
+        h2 {
+            font-size: 3em; text-align: center; color: #8B4513; margin-bottom: 50px;
+            position: relative; opacity: 0; transform: translateY(30px); transition: all 1s;
+        }
+        h2.visible { opacity: 1; transform: translateY(0); }
+        h2::after {
+            content: ''; display: block; width: 0; height: 3px;
+            background: linear-gradient(90deg, #8B4513, #D2691E); margin: 15px auto;
+            transition: width 1s;
+        }
+        h2.visible::after { width: 120px; }
+
+        /* Generations */
+        .generation {
+            margin: 120px 0;
+            padding: 60px;
+            border-radius: 25px;
+            background: white;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(80px);
+            transition: all 1.4s ease-out;
+        }
+        .generation.visible { opacity: 1; transform: translateY(0); }
+
+        .gen-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 2.2em;
+            font-weight: 700;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+        .gen-1 .gen-badge { background: linear-gradient(135deg, #4169E1, #6495ED); }
+        .gen-2 .gen-badge { background: linear-gradient(135deg, #32CD32, #90EE90); }
+        .gen-3 .gen-badge { background: linear-gradient(135deg, #9370DB, #DDA0DD); }
+
+        .leader-name {
+            font-size: 2.8em;
+            text-align: center;
+            margin: 20px 0 10px;
+            color: #3d2b1f;
+        }
+        .leader-title {
+            text-align: center;
+            font-size: 1.3em;
+            color: #8B4513;
+            margin-bottom: 40px;
+            font-style: italic;
+        }
+
+        .leader-content {
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 50px;
+            align-items: start;
+        }
+        .leader-desc ul {
+            list-style: none;
+            padding: 0;
+        }
+        .leader-desc li {
+            padding: 12px 0 12px 35px;
+            position: relative;
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: all 0.7s ease-out;
+        }
+        .generation.visible .leader-desc li { opacity: 1; transform: translateX(0); }
+        .leader-desc li:nth-child(1) { transition-delay: 0.3s; }
+        .leader-desc li:nth-child(2) { transition-delay: 0.4s; }
+        .leader-desc li:nth-child(3) { transition-delay: 0.5s; }
+        .leader-desc li:nth-child(4) { transition-delay: 0.6s; }
+        .leader-desc li:nth-child(5) { transition-delay: 0.7s; }
+        .leader-desc li::before {
+           
+            content: '✔';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #D2691E;
+            font-weight: bold;
+        }
+
+        .photo-placeholder {
+            width: 100%;
+            height: 310px;
+            background: linear-gradient(135deg, #f5f5dc, #fdfbf5);
+            border-radius: 160px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 1px dashed #D2691E;
+            font-size: 1em;
+            color: #8B4513;
+            animation: float 5s ease-in-out infinite;
+        }
+        @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+        .photo-placeholder i { font-size: 5.5em; margin-bottom: 15px; animation: pulse 2s infinite; }
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.12); } 100% { transform: scale(1); } }
+
+        .quote-box {
+            background: #f5f5dc;
+            padding: 35px;
+            border-radius: 20px;
+            margin-top: 40px;
+            border-left: 6px solid #D2691E;
+            font-style: italic;
+            font-size: 1.15em;
+            line-height: 1.7;
+            box-shadow: 0 8px 25px rgba(139,69,19,0.1);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s ease-out 0.5s;
+        }
+        .generation.visible .quote-box { opacity: 1; transform: translateY(0); }
+
+        @media (max-width: 768px) {
+            .leader-content { grid-template-columns: 1fr; }
+            .gen-badge { font-size: 1.8em; }
+            .leader-name { font-size: 2.2em; }
+            .photo-placeholder { height: 280px; }
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.15 });
+
+            document.querySelectorAll('section, h2, .generation').forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
+    </div>
+    <!-- Spinner End -->
+
+    <div id="header-container"></div>
+    
+   <!-- Navbar Start -->
+     <nav class="navbar navbar-expand-lg navbar-light sticky-top p-2" style="background-color: rgb(177, 226, 177);">
+        <div class="container-fluid px-0">
+            <div class="d-flex w-100 align-items-center justify-content-between flex-wrap flex-lg-nowrap">
+                <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5 mb-2 mb-lg-0">
+                    <img src="img/vidhi_logo-removebg-preview.png" class="ps-4 logo-img img-fluid" alt="Vidhi Enterprises Logo">
+                </a>
+                <form class="d-flex mx-auto my-2 my-lg-0 flex-grow-1" role="search" style="max-width: 400px; min-width: 180px; width: 100%;">
+                    <div class="input-group input-group-lg shadow-sm search-bar-rounded position-relative" style="width:100%;">
+                        <input id="searchInput" type="search" class="form-control rounded-pill border-1 ps-4" placeholder="Search" aria-label="Search" style="background: #f8f9fa; font-size: 1.1rem; min-height: 48px;" autocomplete="off">
+                        <button class="btn btn-primary rounded-pill d-flex align-items-center justify-content-center" type="submit" title="Search" style="width:48px; height:48px; margin-left:-48px; z-index:2; ">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        <ul id="searchSuggestions" class="search-suggestions"></ul>
+                    </div>
+                </form>
+                <button type="button" class="navbar-toggler ms-2 me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse w-100" id="navbarCollapse" style="margin-right: 2rem;">
+                <div class="navbar-nav ms-auto p-4 p-lg-0 align-items-lg-center">
+                    <a href="index.html" class="nav-item nav-link active "><b>Home</b></a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link  dropdown-toggle" data-bs-toggle="dropdown"><b>Products</b></a>
+                        <div class="dropdown-menu m-0 bg-light">
+                            <a href="/dripirri.html" class="dropdown-item"><b>Drip Irrigation</b></a>
+                            <a href="/sprinkler.html" class="dropdown-item"><b>Sprinkler Irrigation</b></a>
+                            <a href="/rainsprinkler.html" class="dropdown-item"><b>Rain Sprinkler</b></a>
+                            <a href="/landscape.html" class="dropdown-item"><b>Landscape Irrigation</b></a>
+                            <a href="/economical.html" class="dropdown-item"><b>Economical Irrigation</b></a>
+                            <a href="/Vidhi-kit.html" class="dropdown-item"><b>Vidhi Kit</b></a>
+                        </div>
+                    </div>
+                     <div class="nav-item dropdown">
+                        <a href="#" class="nav-link  dropdown-toggle" data-bs-toggle="dropdown"><b>About Us</b></a>
+                        <div class="dropdown-menu bg-light m-0">
+                            <a href="company-profile.html" class="dropdown-item"><b>Company Profile</b></a>
+                            <a href="founder-vision.html" class="dropdown-item"><b>Founder's Vision</b></a>
+                            <a href="our-journey.html" class="dropdown-item"><b>Our Journey</b></a>
+                            <a href="legacy-leader.html" class="dropdown-item"><b> Legacy &Leadership</b></a>
+                            <a href="manfacture.html" class="dropdown-item"><b>Manfacturing & Infrastructure</b></a>
+                            <a href="quality-policy.html" class="dropdown-item"><b>Quality Policy</b></a>
+                            <a href="sustainable.html" class="dropdown-item"><b>Sustainabilty Commitment</b></a>
+                            <a href="global-presence.html" class="dropdown-item"><b>Global Presence</b></a>
+                            <a href="knowledge-hub.html" class="dropdown-item"><b>Knowledge Hub</b></a>
+                            <a href="blog.html" class="dropdown-item"><b>Blog</b></a>
+                            <a href="careers.html" class="dropdown-item"><b>Careers</b></a>
+
+                        </div>
+                    </div>
+
+
+                    <a href="contact.html" class="nav-item  nav-link"><b>Contact Us</b></a>
+                    <a href="index.html" class="navbar-brand d-flex align-items-center ps-4 mt-3 mt-lg-0">
+                        <img src="img/logo-olored.png" class="logo-img img-fluid" alt="Vidhi Enterprises Logo Right" style="margin-left: 0.5rem; margin-bottom: 11px;">
+                    </a>
+                </div>
+            </div>
+        </div>
+      
+    </nav>
+    <!-- Navbar End -->
+<header class="mt-2">
+        <div class="container">
+            <h1> ⭐Legacy & Leadership</h1>
+            <p class="header-subtitle">Three Generations. One Vision. Endless Commitment to Quality.</p>
+        </div>
+    </header>
+
+    <section class="legacy-intro">
+        <div class="container">
+            <h2> 🌿 A Legacy Built on Precision & Integrity</h2>
+            <p style="text-align:center; font-size:1.15em; max-width:800px; margin:0 auto 30px; color:#5d4037;">
+                Vidhi Enterprises was built on the dedication and engineering brilliance of Late Shri Dhirendar Kumar Jain (D.K. Jain) — an engineer, architect, and visionary whose passion for accuracy changed the way micro-irrigation components were made in India.
+            </p>
+            <p style="text-align:center; font-size:1.15em; max-width:800px; margin:0 auto;">
+                Starting in the early 1980s with just one helper and a small home-based setup, he transformed a simple idea into a respected manufacturing enterprise. His legacy lives in every product we create — the insistence on perfect flow rate, consistent discharge, accurate dimensions, and the belief that precision is the soul of irrigation technology.
+            </p>
+        </div>
+    </section>
+
+    <!-- Generation 1 -->
+    <section class="generation gen-1">
+        <div class="container">
+            <div class="gen-badge">First Generation — The Visionary</div>
+            <h2 class="leader-name">Late Shri Dhirendar Kumar Jain (D.K. Jain)</h2>
+            <p class="leader-title">Founder – Engineer, Architect & Precision Expert</p>
+
+            <div class="leader-content">
+                <div class="leader-desc">
+                    <ul>
+                        <li> Pioneer in OEM and white-label production for irrigation brands.</li>
+                        <li>Known for unmatched mastery in flow discharge, emitter accuracy, and sprinkler performance.</li>
+                        <li>Built the foundation of the company’s manufacturing and engineering capabilities.</li>
+                        <li>Expanded production from hand moulding machines to automatic injection moulding lines, extruders, and a full tool room.</li>
+                        <li>Inspired future generations through discipline, honesty, and technical excellence.</li>
+                    </ul>
+                    <p style="margin-top:25px; font-style:italic; color:#8B4513;">
+                        His legacy remains the heartbeat of Vidhi Enterprises.
+                    </p>
+                </div>
+                <div class="photo-placeholder">
+                   <img src="img/dada-ji.png" alt="">
+                </div>
+            </div>
+
+            <div class="quote-box">
+                “The man who built Vidhi from one room with precision, honesty, and discipline — the foundation of everything we are today.”<br><br>
+                “I named this company Vidhi because Vidhi means the right way — the right way of doing any work. My vision was simple: make every product with honesty, precision, and discipline. When the way is right, the results will always be right...”
+            </div>
+        </div>
+    </section>
+
+    <!-- Generation 2 -->
+    <section class="generation gen-2">
+        <div class="container">
+            <div class="gen-badge">Second Generation — Expansion Leader</div>
+            <h2 class="leader-name">Mr. Vineet Jain</h2>
+            <p class="leader-title">Driving Growth, Modernization & Global Markets</p>
+
+            <div class="leader-content">
+                <div class="leader-desc">
+                    <ul>
+                        <li>Joining in 1995 — propelled Vidhi into technological upgrades</li>
+                        <li>Introduced plastic & brass sprinkler manufacturing</li>
+                        <li>Started gravity die casting & large-format rain sprinklers</li>
+                        <li>Led entry into UAE, Saudi Arabia, Qatar, Oman & Middle East markets</li>
+                        <li>Strengthened OEM partnerships across India</li>
+                        <li>Ensured founder’s values remain at the core of every decision</li>
+                    </ul>
+                </div>
+                <div class="photo-placeholder">
+                    <img src="img/vineet-jain.png" alt="">
+                </div>
+            </div>
+
+            <div class="quote-box">
+                “Expanding the founder’s vision with global reach, modern innovation, and long-term relationships.”<br><br>
+                “My focus has always been on quality, consistency, and long-term relationships — values my father lived by. From expanding our product range to entering international markets, every step has been driven by the belief that farmers and partners deserve the best.”
+            </div>
+        </div>
+    </section>
+
+    <!-- Generation 3 -->
+    <section class="generation gen-3">
+        <div class="container">
+            <div class="gen-badge">Third Generation — Future-Ready Vision</div>
+            <h2 class="leader-name">Mr. Vibhor Jain</h2>
+            <p class="leader-title">Innovation, Global Strategy & Next-Gen Precision</p>
+
+            <div class="leader-content">
+                <div class="leader-desc">
+                    <ul>
+                        <li>Started on the factory floor — learned every technical detail hands-on</li>
+                        <li>Led African market expansion — major success in Kenya (2024)</li>
+                        <li>Modernized digital presence & brand identity</li>
+                        <li>Improved export packaging, documentation & global compliance</li>
+                        <li>Upgraded product lines to latest international standards</li>
+                        <li>Building new distributor networks worldwide</li>
+                    </ul>
+                </div>
+                <div class="photo-placeholder">
+               <img src="img/vibhor-jain.png" alt="">
+                </div>
+            </div>
+
+            <div class="quote-box">
+                “Carrying forward a three-generation legacy with new ideas, new markets, and the same dedication.”<br><br>
+                “The vision my grandfather started in the early 80s lives through every decision I make. I am committed to preserving his values while shaping Vidhi Enterprises into a global name built on quality, trust, and engineering excellence.”<br><br>
+                — Vibhor Jain
+            </div>
+        </div>
+    </section>
+
+    <section style="background:#8B4513; color:white; padding:100px 0; text-align:center;">
+        <div class="container">
+            <h2 style="color:white;"> 🌎Leadership Philosophy</h2>
+            <p style="font-size:1.4em; max-width:800px; margin:0 auto 30px;">
+                Across three generations, the leadership of Vidhi Enterprises is united by a single belief:<br><br>
+                <strong>“Build products that last. Build relationships that trust. Build a company that stands the test of time.”</strong>
+            </p>
+            <p style="font-size:1.2em; opacity:0.9;">
+                Together, we lead the company toward becoming a global benchmark in micro-irrigation technology — rooted in family values, driven by engineering excellence, and committed to a water-efficient future.
+            </p>
+        </div>
+    </section>
+
+    <!-- Moving Forward With Purpose -->
+<section class="closing">
+    <div class="container">
+        <h2>Moving Forward With Purpose</h2>
+        <p style="font-size:1.3em;max-width:800px;margin:0 auto 60px;opacity:.95;">
+            Vidhi Enterprises continues to grow under the combined strength of:
+        </p>
+        <div class="closing-grid">
+            <div class="closing-card">
+                <i class="fas fa-book-open"></i>
+                <h3>Founder’s principles</h3>
+            </div>
+            <div class="closing-card">
+                <i class="fas fa-light fa-chart-line"></i>
+                <h3>Experience of the second generation</h3>
+            </div>
+            <div class="closing-card">
+                <i class="fas fa-rocket"></i>
+                <h3>Energy and innovation of the third generation</h3>
+            </div>
+        </div>
+        <p class="closing-p" style="font-size:1.25em;max-width:900px;margin:50px auto 0;opacity:.95;line-height:1.7;">
+            Together, they lead the company toward becoming a <strong>global benchmark in micro-irrigation technology</strong>, supplying reliable components that support farmers, contractors, and industries worldwide.
+        </p>
+    </div>
+</section>
+
+    <div id="footer-container"></div>
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/parallax/parallax.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+    <script src="/js/chatbot-advanced.js"></script>
+
+
+</html>

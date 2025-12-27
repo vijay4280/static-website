@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Gardener - Gardening Website Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">  
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    
+<style>
+    body {
+      background-color: #f6fff7;
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    .page-header {
+      background-image: url('https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    }
+
+    .blog-card {
+      border: none;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+      background: #fff;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .blog-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .blog-card img {
+      height: 220px;
+      width: 100%;
+      object-fit: cover;
+      transition: all 0.3s ease;
+    }
+
+    .blog-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .blog-title {
+      color: #145a32;
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+    }
+
+    .btn-read {
+      background: #198754;
+      color: #fff;
+      border-radius: 25px;
+      padding: 7px 18px;
+      font-size: 0.9rem;
+      transition: background 0.3s;
+      text-decoration: none;
+    }
+
+    .btn-read:hover {
+      background: #145a32;
+      color: #fff;
+    }
+
+    /* Pagination Styling */
+    #blog-pagination {
+      padding: 40px 0;
+    }
+
+    #blog-pagination ul {
+      list-style: none;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      margin: 0;
+    }
+
+    #blog-pagination ul li a {
+      color: #198754;
+      background: #e9f7ef;
+      padding: 8px 14px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+
+    #blog-pagination ul li a.active,
+    #blog-pagination ul li a:hover {
+      background: #198754;
+      color: #fff;
+    }
+
+    footer {
+      background: #1b4332;
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+    }
+  </style>
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
+    </div>
+    <!-- Spinner End -->
+
+    <div id="header-container"></div>
+
+  <!-- Navbar Start -->
+     <nav class="navbar navbar-expand-lg navbar-light sticky-top p-2" style="background-color: rgb(177, 226, 177);">
+        <div class="container-fluid px-0">
+            <div class="d-flex w-100 align-items-center justify-content-between flex-wrap flex-lg-nowrap">
+                <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5 mb-2 mb-lg-0">
+                    <img src="img/vidhi_logo-removebg-preview.png" class="ps-4 logo-img img-fluid" alt="Vidhi Enterprises Logo">
+                </a>
+                <form class="d-flex mx-auto my-2 my-lg-0 flex-grow-1" role="search" style="max-width: 400px; min-width: 180px; width: 100%;">
+                    <div class="input-group input-group-lg shadow-sm search-bar-rounded position-relative" style="width:100%;">
+                        <input id="searchInput" type="search" class="form-control rounded-pill border-1 ps-4" placeholder="Search" aria-label="Search" style="background: #f8f9fa; font-size: 1.1rem; min-height: 48px;" autocomplete="off">
+                        <button class="btn btn-primary rounded-pill d-flex align-items-center justify-content-center" type="submit" title="Search" style="width:48px; height:48px; margin-left:-48px; z-index:2; ">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        <ul id="searchSuggestions" class="search-suggestions"></ul>
+                    </div>
+                </form>
+                <button type="button" class="navbar-toggler ms-2 me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse w-100" id="navbarCollapse" style="margin-right: 2rem;">
+                <div class="navbar-nav ms-auto p-4 p-lg-0 align-items-lg-center">
+                    <a href="index.html" class="nav-item nav-link active "><b>Home</b></a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link  dropdown-toggle" data-bs-toggle="dropdown"><b>Products</b></a>
+                        <div class="dropdown-menu m-0 bg-light">
+                            <a href="/dripirri.html" class="dropdown-item"><b>Drip Irrigation</b></a>
+                            <a href="/sprinkler.html" class="dropdown-item"><b>Sprinkler Irrigation</b></a>
+                            <a href="/rainsprinkler.html" class="dropdown-item"><b>Rain Sprinkler</b></a>
+                            <a href="/landscape.html" class="dropdown-item"><b>Landscape Irrigation</b></a>
+                            <a href="/economical.html" class="dropdown-item"><b>Economical Irrigation</b></a>
+                            <a href="/Vidhi-kit.html" class="dropdown-item"><b>Vidhi Kit</b></a>
+                        </div>
+                    </div>
+                     <div class="nav-item dropdown">
+                        <a href="#" class="nav-link  dropdown-toggle" data-bs-toggle="dropdown"><b>About Us</b></a>
+                        <div class="dropdown-menu bg-light m-0">
+                            <a href="company-profile.html" class="dropdown-item"><b>Company Profile</b></a>
+                            <a href="founder-vision.html" class="dropdown-item"><b>Founder's Vision</b></a>
+                            <a href="our-journey.html" class="dropdown-item"><b>Our Journey</b></a>
+                            <a href="legacy-leader.html" class="dropdown-item"><b> Legacy &Leadership</b></a>
+                            <a href="manfacture.html" class="dropdown-item"><b>Manfacturing & Infrastructure</b></a>
+                            <a href="quality-policy.html" class="dropdown-item"><b>Quality Policy</b></a>
+                            <a href="sustainable.html" class="dropdown-item"><b>Sustainabilty Commitment</b></a>
+                            <a href="global-presence.html" class="dropdown-item"><b>Global Presence</b></a>
+                            <a href="knowledge-hub.html" class="dropdown-item"><b>Knowledge Hub</b></a>
+                            <a href="blog.html" class="dropdown-item"><b>Blog</b></a>
+                            <a href="careers.html" class="dropdown-item"><b>Careers</b></a>
+
+                        </div>
+                    </div>
+
+
+                    <a href="contact.html" class="nav-item  nav-link"><b>Contact Us</b></a>
+                    <a href="index.html" class="navbar-brand d-flex align-items-center ps-4 mt-3 mt-lg-0">
+                        <img src="img/logo-olored.png" class="logo-img img-fluid" alt="Vidhi Enterprises Logo Right" style="margin-left: 0.5rem; margin-bottom: 11px;">
+                    </a>
+                </div>
+            </div>
+        </div>
+      
+    </nav>
+    <!-- Navbar End -->
+
+
+
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header py-5 mb-5 mt-2 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container text-center py-5">
+            <h1 class="display-3 text-white mb-4 animated slideInDown">Blog</h1>
+            <nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb justify-content-center mb-0">
+                    <li class="breadcrumb-item"><a href="/index.html">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Blog</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <!-- Page Header End -->
+ 
+    <!-- Blog Section -->
+  <div class="container py-5">
+    <div class="text-center mb-5 animate__animated animate__zoomIn">
+      <p class="fs-5 fw-bold text-success"><u>Vidhi Blogs</u></p>
+      <h2 class="display-6 text-success">Latest Blogs & Articles</h2><hr><hr>
+    </div>
+
+    <div class="row g-4">
+      <!-- Repeatable Blog Cards -->
+      <!-- Each blog is styled & animated -->
+      <!-- Blog Posts -->
+      <!-- Generate 20 blogs -->
+      <!-- Example -->
+      <script>
+        const blogs = [
+          { title: "The Future of Drip Irrigation", img: "https://images.unsplash.com/photo-1602526218489-dc8b0d3f28b2?auto=format&fit=crop&w=800&q=80" },
+          { title: "Soil Health: The Foundation of Farming", img: "https://images.unsplash.com/photo-1524594081293-190a2fe0baae?auto=format&fit=crop&w=800&q=80" },
+          { title: "Precision Agriculture: Smart Farming Revolution", img: "https://images.unsplash.com/photo-1516912481808-3406841bd33c?auto=format&fit=crop&w=800&q=80" },
+          { title: "Organic Fertilizers and Their Impact", img: "https://images.unsplash.com/photo-1607877460814-340dca82bdb3?auto=format&fit=crop&w=800&q=80" },
+          { title: "Sustainable Water Use in Agriculture", img: "https://images.unsplash.com/photo-1587574293340-e63f58e8b1f3?auto=format&fit=crop&w=800&q=80" },
+          { title: "Greenhouse Farming Techniques", img: "https://images.unsplash.com/photo-1600271886991-7a8db8d4bb45?auto=format&fit=crop&w=800&q=80" },
+          { title: "Benefits of Crop Rotation", img: "https://images.unsplash.com/photo-1616627782325-c8f4e16e8e1a?auto=format&fit=crop&w=800&q=80" },
+          { title: "How IoT Is Changing Agriculture", img: "https://images.unsplash.com/photo-1518733057094-95b53151d6d6?auto=format&fit=crop&w=800&q=80" },
+          { title: "Eco-Friendly Pest Management", img: "https://images.unsplash.com/photo-1589739909474-6ccdfc2283d9?auto=format&fit=crop&w=800&q=80" },
+          { title: "Smart Water Sensors in Fields", img: "https://images.unsplash.com/photo-1602526432604-029a709d99d9?auto=format&fit=crop&w=800&q=80" },
+          { title: "Organic Farming: Back to Roots", img: "https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?auto=format&fit=crop&w=800&q=80" },
+          { title: "Rainwater Harvesting Methods", img: "https://images.unsplash.com/photo-1600634498740-64e54b661b88?auto=format&fit=crop&w=800&q=80" },
+          { title: "Digital Farming Tools Every Farmer Needs", img: "https://images.unsplash.com/photo-1602526218489-dc8b0d3f28b2?auto=format&fit=crop&w=800&q=80" },
+          { title: "Composting at Farm Scale", img: "https://images.unsplash.com/photo-1624378442393-d30ec8c9a6df?auto=format&fit=crop&w=800&q=80" },
+          { title: "Sustainable Crop Protection Strategies", img: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80" },
+          { title: "Farm Automation: The Next Big Thing", img: "https://images.unsplash.com/photo-1602526218489-dc8b0d3f28b2?auto=format&fit=crop&w=800&q=80" },
+          { title: "Solar-Powered Irrigation Systems", img: "https://images.unsplash.com/photo-1589739909474-6ccdfc2283d9?auto=format&fit=crop&w=800&q=80" },
+          { title: "Agroforestry: Trees for a Greener Future", img: "https://images.unsplash.com/photo-1589302168068-964664d93dc0?auto=format&fit=crop&w=800&q=80" },
+          
+        ];
+
+        document.write('<div class="row g-4">');
+        blogs.forEach((blog, index) => {
+          document.write(`
+            <div class="col-lg-4 col-md-6 animate__animated animate__fadeInUp" style="animation-delay:${0.1 * (index % 6)}s">
+              <div class="card blog-card">
+                <img src="${blog.img}" alt="${blog.title}">
+                <div class="card-body">
+                  <h5 class="blog-title">${blog.title}</h5>
+                  <p class="text-muted">Explore in-depth how Vidhi Enterprises is transforming agriculture with innovation and sustainability.</p>
+                </div>
+              </div>
+            </div>
+          `);
+        });
+        document.write('</div>');
+      </script>
+    </div>
+  </div>
+
+  
+
+    <div id="footer-container"></div>
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/parallax/parallax.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+    <script src="/js/chatbot-advanced.js"></script>
+
+
+</html>

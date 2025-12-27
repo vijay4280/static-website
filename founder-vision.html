@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>VIDHI ENTERPRISES - Company Profile</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">  
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+
+   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f5;
+            color: #2d2d2d;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        header {
+            background: linear-gradient(135deg, #2d5a27 0%, #4a7c59 50%, #90EE90 100%);
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            animation: shimmer 4s infinite;
+        }
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+        header .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        header h1 {
+            font-size: 4em;
+            font-weight: 700;
+            margin: 0 0 10px 0;
+            letter-spacing: -0.03em;
+            animation: fadeInUp 1.2s ease-out;
+            flex: 1;
+        }
+        .founder-name {
+            font-size: 1.5em;
+            font-weight: 400;
+            margin: 0 0 3px 0;
+            opacity: 0.9;
+            animation: fadeInUp 1.2s ease-out 0.3s both;
+        }
+        .founder-subtitle {
+            font-size: 1.4em;
+            font-weight: 300;
+            margin: 0;
+            opacity: 0.8;
+            animation: fadeInUp 1.2s ease-out 0.6s both;
+        }
+        .photo-placeholder {
+            width: 300px;
+            height: 340px;
+            /* background: rgba(255,255,255,0.1); */
+            border-radius: 15px;
+            /* backdrop-filter: blur(10px); */
+            /* border: 1px solid rgba(255,255,255,0.2); */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2em;
+            color: rgba(255,255,255,0.7);
+            animation: float 3s ease-in-out infinite;
+            flex-shrink: 0;
+            margin-left: 2rem;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        .intro {
+            background: #ffffff;
+            padding: 80px 0;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+        .intro p {
+            font-size: 1.15em;
+            margin: 0 0 25px 0;
+            color: #4a4a4a;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .intro p.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .intro p:last-of-type {
+            margin-bottom: 0;
+        }
+        section {
+            padding: 90px 0;
+            border-bottom: 1px solid #e8e8e8;
+            opacity: 0;
+            transform: translateY(60px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        section.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        section:last-of-type {
+            border-bottom: none;
+        }
+        h2 {
+            font-size: 3em;
+            text-align: center;
+            color: #2d5a27;
+            margin-bottom: 60px;
+            font-weight: 400;
+            position: relative;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease-out;
+        }
+        h2.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        h2::before {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #2d5a27, #4a7c59);
+            transition: width 0.8s ease-out;
+            transform: translateX(-50%);
+        }
+        h2.animate::before {
+            width: 100px;
+        }
+        .subtitle {
+            text-align: center;
+            font-size: 1.15em;
+            color: #6b6b6b;
+            margin-bottom: 60px;
+            font-weight: 300;
+            opacity: 0;
+            transform: scale(0.95);
+            transition: all 0.8s ease-out;
+        }
+        .subtitle.animate {
+            opacity: 1;
+            transform: scale(1);
+        }
+        .vision-section {
+            background: linear-gradient(135deg, #f0f8f0 0%, #e8f5e8 100%);
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+        .vision-item {
+            background: #ffffff;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(30px) rotateX(10deg);
+            animation: cardFlipIn 0.8s ease-out forwards;
+            position: relative;
+            overflow: hidden;
+        }
+        .vision-item:nth-child(1) { animation-delay: 0.2s; }
+        .vision-item:nth-child(2) { animation-delay: 0.4s; }
+        .vision-item:nth-child(3) { animation-delay: 0.6s; }
+        .vision-item:nth-child(4) { animation-delay: 0.8s; }
+        @keyframes cardFlipIn {
+            to {
+                opacity: 1;
+                transform: translateY(0) rotateX(0deg);
+            }
+        }
+        .vision-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(74, 124, 89, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+        .vision-item:hover::before {
+            left: 100%;
+        }
+        .vision-item:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(45, 90, 39, 0.2);
+        }
+        .vision-item i {
+            font-size: 2.8em;
+            color: #4a7c59;
+            margin-bottom: 20px;
+            transition: all 0.4s ease;
+        }
+        .vision-item:hover i {
+            transform: rotate(360deg) scale(1.1);
+            color: #2d5a27;
+        }
+        .vision-item h3 {
+            font-size: 1.3em;
+            color: #2d5a27;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        .legacy-section {
+            background: #ffffff;
+        }
+        .journey-timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 50px;
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.8s ease-out;
+        }
+        .timeline-item.animate {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+            transform: translateX(50px);
+        }
+        .timeline-item:nth-child(even).animate {
+            transform: translateX(0);
+        }
+        .timeline-content {
+            flex: 1;
+            padding: 20px;
+            background: linear-gradient(135deg, #f0f8f0, #e8f5e8);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+        }
+        .timeline-content:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(45, 90, 39, 0.15);
+        }
+        .timeline-dot {
+            width: 20px;
+            height: 20px;
+            background: #4a7c59;
+            border-radius: 50%;
+            position: relative;
+            z-index: 2;
+            margin: 0 20px;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(74, 124, 89, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(74, 124, 89, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(74, 124, 89, 0); }
+        }
+        .timeline-line {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(to bottom, #2d5a27, #4a7c59);
+            transform: translateX(-50%);
+        }
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        .value-card {
+            background: #ffffff;
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            text-align: center;
+            border-left: 4px solid #4a7c59;
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            opacity: 0;
+            transform: scale(0.9) rotate(-5deg);
+            animation: bounceIn 0.8s ease-out forwards;
+            cursor: pointer;
+        }
+        .value-card:nth-child(1) { animation-delay: 0.2s; }
+        .value-card:nth-child(2) { animation-delay: 0.4s; }
+        .value-card:nth-child(3) { animation-delay: 0.6s; }
+        .value-card:nth-child(4) { animation-delay: 0.8s; }
+        .value-card:nth-child(5) { animation-delay: 1s; }
+        @keyframes bounceIn {
+            0% { transform: scale(0.9) rotate(-5deg); }
+            50% { transform: scale(1.05) rotate(2deg); }
+            100% { opacity: 1; transform: scale(1) rotate(0deg); }
+        }
+        .value-card:hover {
+            transform: scale(1.05) rotate(1deg);
+            border-left-color: #2d5a27;
+            box-shadow: 0 12px 35px rgba(45, 90, 39, 0.2);
+        }
+        .value-card h3 {
+            font-size: 1.4em;
+            color: #2d5a27;
+            margin-bottom: 15px;
+            font-weight: 400;
+        }
+        .promise-section {
+            background: linear-gradient(135deg, #2d5a27 0%, #4a7c59 100%);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        .promise-section h2 {
+            color: white;
+        }
+        .promise-section h2::before {
+            background: linear-gradient(90deg, white, #90EE90);
+        }
+        .promise-section p {
+            font-size: 1.3em;
+            font-style: italic;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s ease-out;
+        }
+        .promise-section p.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.8em; }
+            header .hero-content { flex-direction: column; gap: 20px; }
+            .photo-placeholder { width: 200px; height: 250px; }
+            h2 { font-size: 2.4em; }
+            .timeline-item { flex-direction: column !important; text-align: center; }
+            .timeline-dot { margin: 20px 0; }
+            .grid { grid-template-columns: 1fr; }
+        }
+    </style>
+    <script>
+        // Enhanced scroll animation trigger with IntersectionObserver
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: '0px 0px -100px 0px'
+        };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                    observer.unobserve(entry.target); // One-time animation
+                }
+            });
+        }, observerOptions);
+
+        // Typing effect for intro paragraphs (staggered)
+        function typeWriter(element, text, speed = 50) {
+            let i = 0;
+            element.innerHTML = '';
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                }
+            }
+            type();
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Observe sections, h2, subtitle, etc.
+            document.querySelectorAll('section, h2, .subtitle, .promise-section p, .intro p').forEach(el => {
+                observer.observe(el);
+            });
+            // Staggered typing for intro
+            const introPs = document.querySelectorAll('.intro p');
+            introPs.forEach((p, index) => {
+                setTimeout(() => {
+                    typeWriter(p, p.textContent, 3 + index * 1);
+                    p.classList.add('animate');
+                }, 5 + index * 3);
+            });
+            // Observe timeline items
+            document.querySelectorAll('.timeline-item').forEach((item, index) => {
+                setTimeout(() => observer.observe(item), index * 2);
+            });
+            // Observe grid items
+            document.querySelectorAll('.vision-item, .value-card').forEach(item => {
+                observer.observe(item);
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
+    </div>
+    <!-- Spinner End -->
+
+    <div id="header-container"></div>
+    
+   <!-- Navbar Start -->
+     <nav class="navbar navbar-expand-lg navbar-light sticky-top p-2" style="background-color: rgb(177, 226, 177);">
+        <div class="container-fluid px-0">
+            <div class="d-flex w-100 align-items-center justify-content-between flex-wrap flex-lg-nowrap">
+                <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5 mb-2 mb-lg-0">
+                    <img src="img/vidhi_logo-removebg-preview.png" class="ps-4 logo-img img-fluid" alt="Vidhi Enterprises Logo">
+                </a>
+                <form class="d-flex mx-auto my-2 my-lg-0 flex-grow-1" role="search" style="max-width: 400px; min-width: 180px; width: 100%;">
+                    <div class="input-group input-group-lg shadow-sm search-bar-rounded position-relative" style="width:100%;">
+                        <input id="searchInput" type="search" class="form-control rounded-pill border-1 ps-4" placeholder="Search" aria-label="Search" style="background: #f8f9fa; font-size: 1.1rem; min-height: 48px;" autocomplete="off">
+                        <button class="btn btn-primary rounded-pill d-flex align-items-center justify-content-center" type="submit" title="Search" style="width:48px; height:48px; margin-left:-48px; z-index:2; ">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        <ul id="searchSuggestions" class="search-suggestions"></ul>
+                    </div>
+                </form>
+                <button type="button" class="navbar-toggler ms-2 me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse w-100" id="navbarCollapse" style="margin-right: 2rem;">
+                <div class="navbar-nav ms-auto p-4 p-lg-0 align-items-lg-center">
+                    <a href="index.html" class="nav-item nav-link active "><b>Home</b></a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link  dropdown-toggle" data-bs-toggle="dropdown"><b>Products</b></a>
+                        <div class="dropdown-menu m-0 bg-light">
+                            <a href="/dripirri.html" class="dropdown-item"><b>Drip Irrigation</b></a>
+                            <a href="/sprinkler.html" class="dropdown-item"><b>Sprinkler Irrigation</b></a>
+                            <a href="/rainsprinkler.html" class="dropdown-item"><b>Rain Sprinkler</b></a>
+                            <a href="/landscape.html" class="dropdown-item"><b>Landscape Irrigation</b></a>
+                            <a href="/economical.html" class="dropdown-item"><b>Economical Irrigation</b></a>
+                            <a href="/Vidhi-kit.html" class="dropdown-item"><b>Vidhi Kit</b></a>
+                        </div>
+                    </div>
+                     <div class="nav-item dropdown">
+                        <a href="#" class="nav-link  dropdown-toggle" data-bs-toggle="dropdown"><b>About Us</b></a>
+                        <div class="dropdown-menu bg-light m-0">
+                            <a href="company-profile.html" class="dropdown-item"><b>Company Profile</b></a>
+                            <a href="founder-vision.html" class="dropdown-item"><b>Founder's Vision</b></a>
+                            <a href="our-journey.html" class="dropdown-item"><b>Our Journey</b></a>
+                            <a href="legacy-leader.html" class="dropdown-item"><b> Legacy &Leadership</b></a>
+                            <a href="manfacture.html" class="dropdown-item"><b>Manfacturing & Infrastructure</b></a>
+                            <a href="quality-policy.html" class="dropdown-item"><b>Quality Policy</b></a>
+                            <a href="sustainable.html" class="dropdown-item"><b>Sustainabilty Commitment</b></a>
+                            <a href="global-presence.html" class="dropdown-item"><b>Global Presence</b></a>
+                            <a href="knowledge-hub.html" class="dropdown-item"><b>Knowledge Hub</b></a>
+                            <a href="blog.html" class="dropdown-item"><b>Blog</b></a>
+                            <a href="careers.html" class="dropdown-item"><b>Careers</b></a>
+
+                        </div>
+                    </div>
+
+
+                    <a href="contact.html" class="nav-item  nav-link"><b>Contact Us</b></a>
+                    <a href="index.html" class="navbar-brand d-flex align-items-center ps-4 mt-3 mt-lg-0">
+                        <img src="img/logo-olored.png" class="logo-img img-fluid" alt="Vidhi Enterprises Logo Right" style="margin-left: 0.5rem; margin-bottom: 11px;">
+                    </a>
+                </div>
+            </div>
+        </div>
+      
+    </nav>
+    <!-- Navbar End -->
+
+  <header class="mt-2">
+        <div class="hero-content ">
+            <div>
+                <h1>Founder’s Vision</h1>
+                <p  class="founder-name ">Late Shri Dhirendar Kumar Jain (Pipewale Bauji)</p>
+                <p class="founder-subtitle">Engineer. Architect. Visionary.</p>
+            </div>
+            <div class="photo-placeholder">
+                
+                <img src="img/dada-ji.png" alt="" class="text-center" style="border-radius: 150px;">
+            </div>
+        </div>
+    </header>
+
+    <section class="intro">
+        <div class="container">
+            <p>Vidhi Enterprises stands on the foundation laid by Late Shri Dhirendar Kumar Jain, affectionately known as Pipewale Bauji, whose remarkable journey continues to guide our purpose, values, and ambition.</p>
+            <p>An engineer and architect by profession, he believed that precision, discipline, and good design were not just principles for buildings—but for businesses, products, and life itself.</p>
+            <p>In the early 1980s, with no capital, no workforce, and no industry connections, he started everything from his home, working tirelessly with just one helper.</p>
+            <p>What began as a modest effort grew—brick by brick—into a brand known for quality, integrity, and innovation in irrigation components.</p>
+        </div>
+    </section>
+
+    <section class="vision-section">
+        <div class="container">
+            <h2>A Vision Rooted in Purpose</h2>
+            <p class="subtitle">Shri D.K. Jain saw agriculture as the backbone of the nation and understood that water-efficient irrigation would shape the future of farming. His purpose was simple yet powerful:</p>
+            <div class="grid">
+                <div class="vision-item">
+                    <i class="fas fa-seedling"></i>
+                    <h3>Make reliable irrigation components accessible</h3>
+                </div>
+                <div class="vision-item">
+                    <i class="fas fa-handshake"></i>
+                    <h3>Support farmers with quality they can trust</h3>
+                </div>
+                <div class="vision-item">
+                    <i class="fas fa-balance-scale"></i>
+                    <h3>Build a company where ethics come before profit</h3>
+                </div>
+                <div class="vision-item">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Innovate to reduce water wastage and increase productivity</h3>
+                </div>
+            </div>
+            <p class="subtitle" style="text-align: center; margin-top: 40px;">His vision was not only to manufacture products, but to empower livelihoods.</p>
+        </div>
+    </section>
+
+    <section class="legacy-section">
+        <div class="container">
+            <h2>Engineering Excellence as a Philosophy</h2>
+            <p class="subtitle">Being an engineer and architect, he was meticulous about:</p>
+            <div class="grid">
+                <div class="vision-item">
+                    <i class="fas fa-ruler-combined"></i>
+                    <h3>Accuracy in design</h3>
+                </div>
+                <div class="vision-item">
+                    <i class="fas fa-cogs"></i>
+                    <h3>Consistency in production</h3>
+                </div>
+                <div class="vision-item">
+                    <i class="fas fa-hard-hat"></i>
+                    <h3>Long-lasting materials</h3>
+                </div>
+                <div class="vision-item">
+                    <i class="fas fa-tools"></i>
+                    <h3>Practical innovation</h3>
+                </div>
+                <div class="vision-item">
+                    <i class="fas fa-clipboard-check"></i>
+                    <h3>Strong quality control</h3>
+                </div>
+            </div>
+            <p class="subtitle" style="text-align: center; margin-top: 40px;">To him, every dripper, fitting, or pipe was not a product — it was a responsibility. His engineering mindset shaped the culture of Vidhi Enterprises: Work with precision. Deliver with honesty. Build with purpose.</p>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2>From a Small Room to a Global Journey</h2>
+            <p class="subtitle">What began in one room with a single helper has today expanded into:</p>
+            <div class="journey-timeline">
+                <div class="timeline-line"></div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>A modern manufacturing setup</h3>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>A strong workforce</h3>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Multiple product lines</h3>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>ISO and industry certifications</h3>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>A growing export presence across the Middle East, Africa & Asia</h3>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+            </div>
+            <p class="subtitle" style="text-align: center; margin-top: 40px;">This growth reflects the resilience, courage, and discipline he instilled in the company.</p>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2>Values That Continue to Guide Us</h2>
+            <p class="subtitle">Shri D.K. Jain’s legacy continues to inspire every decision we make:</p>
+            <div class="values-grid">
+                <div class="value-card">
+                    <h3>Integrity first</h3>
+                </div>
+                <div class="value-card">
+                    <h3>Build long-term relationships</h3>
+                </div>
+                <div class="value-card">
+                    <h3>Create value, not just products</h3>
+                </div>
+                <div class="value-card">
+                    <h3>Work hard and stay grounded</h3>
+                </div>
+                <div class="value-card">
+                    <h3>Let quality speak louder than marketing</h3>
+                </div>
+            </div>
+            <p class="subtitle" style="text-align: center; margin-top: 40px;">These values remain the heart of Vidhi Enterprises.</p>
+        </div>
+    </section>
+
+    <section class="promise-section">
+        <div class="container">
+            <h2>Looking Ahead — Continuing His Vision</h2>
+            <p>Today, the company is led with the same passion he carried — to become a global benchmark in: Micro-irrigation components, Water-efficient technologies, Precision agricultural solutions, Sustainable manufacturing.</p>
+            <p>His journey teaches us that great things are built with courage, honesty, and a clear vision, no matter how small the beginning. Vidhi Enterprises moves forward carrying his legacy — with pride, with purpose, and with a promise to uphold his standards in everything we do.</p>
+        </div>
+    </section>
+  
+
+    <div id="footer-container"></div>
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/parallax/parallax.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+    <script src="/js/chatbot-advanced.js"></script>
+
+
+</html>
